@@ -4,10 +4,10 @@
   grid-row-gap: 1rem;
   max-height: 50rem;
   overflow: scroll;  
-  & h3 {
-    font-size: 3rem;
-    font-style: italic;
-  }
+}
+h3.todo-list-header {
+  font-size: 3rem;
+  font-style: italic;
 }
 .todo-item-container {
   font-size: 2rem;

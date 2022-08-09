@@ -33,8 +33,8 @@ const Todos: React.FC<ViewProps> = ({
               <h1>Some Awesome Todos.</h1>
               <FontAwesomeIcon icon={faBookAtlas} size="lg"/>
             </div>
+            <h3 className="todo-list-header">Current {count} todos in the list</h3>
             <div className="awesome-todo-list">
-            <h3>Current {count} todos in the list</h3>
             {
               loading ? <div><FontAwesomeIcon icon={faSpinner} size="lg"/></div> : todos.map((todo:Todo) => (
                 <div className="todo-item-container" key={todos.indexOf(todo).toString()}>
