@@ -1,15 +1,12 @@
-import React from "react";
+import React, { MouseEventHandler } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { ButtonType, ButtonDefaults, ButtonOptions } from "./settings";
-import {
-  faInfo
-} from "@fortawesome/free-solid-svg-icons";
-import './tools.scss';
+import './button.scss';
 
 interface Props {
   label?: string;
-  onClick: any;
+  onClick: MouseEventHandler<HTMLButtonElement>;
   icon?: IconProp
   type?: ButtonType,
   options?: ButtonOptions
@@ -24,7 +21,7 @@ const Button: React.FC<Props> = ({
   }) => {
 
   const className = "tools-button" as string; 
-  const faIcon = icon ? icon : faInfo;
+  //const faIcon = icon ? icon : faInfo;
 
   const styles = {
     container: {
@@ -36,14 +33,14 @@ const Button: React.FC<Props> = ({
     } as React.CSSProperties,
   };  
 
-  if(type == ButtonType.ICON_ONLY) {
+  if(type == ButtonType.ICON_ONLY && icon) {
     return (
       <button 
         onClick={onClick}
         className={className}
         style={styles.container}
       >
-      <FontAwesomeIcon icon={faIcon} size="lg"/> 
+      <FontAwesomeIcon icon={icon} size="lg"/> 
       </button>
     );
   }  
@@ -53,7 +50,7 @@ const Button: React.FC<Props> = ({
       className={className}
       style={styles.container}
     >
-    {faIcon ? <FontAwesomeIcon icon={faIcon} size="lg"/> : ''}
+    {icon ? <FontAwesomeIcon icon={icon} size="lg"/> : ''}
     <span>{label}</span>
     </button>
   );

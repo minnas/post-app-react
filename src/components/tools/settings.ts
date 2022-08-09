@@ -18,5 +18,6 @@ export enum ButtonDefaults{
   PADDING = "2rem",
   BORDER = "none",
   BACKGROUND = "transparent",
-  ALING_SELF = "unset"
+  ALING_SELF = "unset",
+  SELECTED = "#93615a"
 };

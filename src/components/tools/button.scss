@@ -5,11 +5,10 @@
   font-weight: bold;
   font-size: 2rem;
   &:hover {
-    background-color: rgba(0, 0, 0, 0.3) !important;
-    filter: drop-shadow(0 0 10rem #000000);  
+    color: #93615a !important;
   }
   &.pressed-darkmode {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: #676461;
     filter: drop-shadow(0 0 10rem #000000);  
     font-size: 4rem;
   }

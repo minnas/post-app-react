@@ -1,0 +1,26 @@
+.content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-content: flex-start;
+  background-image: url("./../../assets/placeholder.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  padding: 2rem 6rem;
+  width: inherit;
+  margin: auto;
+}
+.content-inner {
+  height: 100%;
+  width: 80%;
+  max-width: 80rem;
+  padding: 2rem 6rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border-radius: 8px;
+  padding-top: 2rem;
+  overflow-y: scroll;
+}
+
