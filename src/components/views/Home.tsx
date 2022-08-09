@@ -1,14 +1,13 @@
-import { faBookAtlas, faCheckCircle, faExclamationCircle, faInfo, faLevelUp, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faBookAtlas, faCheckCircle, faExclamationCircle, faInfo, faLevelUp, faTimes, faNoteSticky } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { MouseEventHandler } from "react";
+import { NavLink } from "react-router-dom";
 import Button from "../tools/Button";
 import { ButtonDefaults, ButtonType } from "../tools/settings";
+import { ViewProps } from "../types/view";
 import './home.scss';
 
-interface Props {
-
-}
-
-const Home: React.FC<Props> = ({ 
+const Home: React.FC<ViewProps> = ({ 
   }) => {
 
     const clickMe: MouseEventHandler = (event) => {
@@ -42,6 +41,12 @@ const Home: React.FC<Props> = ({
               <Button label="times" onClick={clickMe} icon={faTimes}/>
               <Button label="no icon" onClick={clickMe}/>
               <Button label="only icon" onClick={clickMe} icon={faBookAtlas} type={ButtonType.ICON_ONLY}/>
+            </div>
+            <div className="footer">
+              <NavLink className="footer-link todo-link" to="/todos">
+                <FontAwesomeIcon icon={faNoteSticky} size="lg"/>
+                  Goto Todos
+              </NavLink>
             </div>
           </div>
         </div>

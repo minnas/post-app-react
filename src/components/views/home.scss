@@ -23,4 +23,21 @@
   padding-top: 2rem;
   overflow-y: scroll;
 }
+.footer {
+  font-size: 2rem;
+  color: rgba(0, 0, 0, .9);
+  text-decoration: none;
+  margin-top: 2rem;
+  font-weight: bold;
+  
+  & a {
+    text-decoration: none;
+    &:hover {
+      opacity: 0.5;
+    }
+    & svg {
+      margin-right: 1rem;
+    }
+  }
+}
 

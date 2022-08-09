@@ -1,0 +1,26 @@
+.awesome-todo-list {
+  display: flex;
+  flex-direction: column;
+  grid-row-gap: 1rem;
+  max-height: 50rem;
+  overflow: scroll;  
+  & h3 {
+    font-size: 3rem;
+    font-style: italic;
+  }
+}
+.todo-item-container {
+  font-size: 2rem;
+  box-shadow: 1px 1px 2px #000;
+  padding: 1rem 2rem;
+}
+.todos-toolbar {
+  display: flex;
+  justify-content: center;
+  align-content: space-between;  
+  & svg {
+    font-size: 3rem;
+    margin-left: 1rem;
+    align-self: center;
+  }
+}

@@ -1,18 +1,17 @@
-import { MouseEventHandler, useState } from "react";
 import "./App.css";
-/*import {
-  faCheckCircle,
-  faExclamationCircle,
-  faInfo, faTimes, faLevelUp, faBookAtlas
-} from "@fortawesome/free-solid-svg-icons";*/
-//import Button from "./components/tools/Button";
-//import { ButtonDefaults, ButtonType } from "./components/tools/settings";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from "./components/views/Home"
 import './custom.scss';
+import Todos from "./components/views/Todos";
 
 const App = (): JSX.Element => {
   return (
-    <Home/>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/todos" element={<Todos />} />
+      </Routes>
+    </Router>  
   );
 };
 
