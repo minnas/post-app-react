@@ -24,3 +24,17 @@
     align-self: center;
   }
 }
+.todo-number {
+  font-weight: 900;
+  padding-bottom: 1rem;  
+}
+.todo-title {
+  line-height: 2rem;
+  &.completed {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    grid-column-gap: 1rem;
+  }
+}

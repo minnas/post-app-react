@@ -1,4 +1,4 @@
-import { faBookAtlas, faHome, faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { faBookAtlas, faHome, faSpinner, faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
@@ -18,6 +18,7 @@ const Todos: React.FC<ViewProps> = ({
       search(ApiType.TODOS)
       .then(items => {
         setTodos(items as Todo[]);
+        setCount(items.length);
         setLoading(false);  
       })
       .finally(() => {
@@ -37,12 +38,12 @@ const Todos: React.FC<ViewProps> = ({
             {
               loading ? <div><FontAwesomeIcon icon={faSpinner} size="lg"/></div> : todos.map((todo:Todo) => (
                 <div className="todo-item-container" key={todos.indexOf(todo).toString()}>
-                  <div>{todos.indexOf(todo).toString()}</div>
+                  <div className="todo-number">{todos.indexOf(todo).toString()}</div>
                   <div className="todo-title">
                     { todo.title }
                   </div>
-                  <div className="todo-title">
-                    Ready? { todo.completed }
+                  <div className="todo-title completed">
+                    Ready? { todo.completed  ? <FontAwesomeIcon icon={faCheck}/> : <FontAwesomeIcon icon={faTimes}/>}
                   </div>
                 </div>
               ))
