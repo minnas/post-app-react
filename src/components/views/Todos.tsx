@@ -8,25 +8,22 @@ import { ViewProps } from "../types/view";
 import './home.scss';
 import './todos.scss';
 
-const Home: React.FC<ViewProps> = ({ 
+const Todos: React.FC<ViewProps> = ({ 
   }) => {
     const [todos, setTodos] = useState([] as Todo[]);
     const [count, setCount] = useState(0);
     const [loading, setLoading] = useState(false);
     useEffect(() => {
-      try {
-        setLoading(true);
-        search(ApiType.TODOS)
-          .then(items => {
-            setTodos(items as Todo[]);
-            setLoading(false);
-        });
-      } catch (error) {
-        throw error;
-      } finally {
+      setLoading(true);
+      search(ApiType.TODOS)
+      .then(items => {
+        setTodos(items as Todo[]);
+        setLoading(false);  
+      })
+      .finally(() => {
         setLoading(false);
-      }
-    });
+      });
+    }, []);
     return (
       <div>
         <div className="content">
@@ -63,4 +60,4 @@ const Home: React.FC<ViewProps> = ({
     );
 }
 
-export default Home;
+export default Todos;

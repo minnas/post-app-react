@@ -1,8 +1,8 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from "./components/views/Home"
-import './custom.scss';
 import Todos from "./components/views/Todos";
+import './custom.scss';
 
 const App = (): JSX.Element => {
   return (
