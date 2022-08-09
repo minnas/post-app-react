@@ -1,0 +1,16 @@
+.tools-button {
+  transition: all .15s ease;
+  margin: 1rem 0.5rem;
+  padding: 1.5rem 2rem;
+  font-weight: bold;
+  font-size: 2rem;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    filter: drop-shadow(0 0 10rem #000000);  
+  }
+  &.pressed-darkmode {
+    background-color: rgba(0, 0, 0, 0.3);
+    filter: drop-shadow(0 0 10rem #000000);  
+    font-size: 4rem;
+  }
+}
