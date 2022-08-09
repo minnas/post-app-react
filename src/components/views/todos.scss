@@ -38,3 +38,10 @@ h3.todo-list-header {
     grid-column-gap: 1rem;
   }
 }
+.todos-show-flake {
+  position: fixed;
+  top: 4rem;
+  right: 4rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 5rem;
+}

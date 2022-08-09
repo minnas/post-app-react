@@ -1,4 +1,4 @@
-import { faBookAtlas, faCheckCircle, faExclamationCircle, faInfo, faLevelUp, faTimes, faNoteSticky } from "@fortawesome/free-solid-svg-icons";
+import { faBookAtlas, faCheckCircle, faExclamationCircle, faInfo, faLevelUp, faTimes, faNoteSticky, faCloudSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { MouseEventHandler } from "react";
 import { NavLink } from "react-router-dom";
@@ -29,6 +29,7 @@ const Home: React.FC<ViewProps> = ({
     return (
       <div>
         <div className="content">
+        <span className="home-cloud-sun"><FontAwesomeIcon icon={faCloudSun} size="lg"/></span>
           <div className="content-inner">
             <h1>Some Awesome Buttons.</h1>
             <div className="awesome-button-list">
