@@ -49,4 +49,16 @@
   color: rgba(255, 255, 255, 0.8);
   font-size: 5rem;
 }
-
+span.some-test {
+  position: fixed;
+  right: 4rem;
+  bottom: 10rem;
+  display: block;
+  transform: rotate(-15deg);
+  z-index: 999;
+  color: #fff;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;  
+  text-decoration: underline;
+  font-size: 4rem;
+}

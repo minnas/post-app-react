@@ -50,6 +50,7 @@ const Home: React.FC<ViewProps> = ({
               </NavLink>
             </div>
           </div>
+          <span className="some-test">Minna.</span>
         </div>
       </div>
     );
