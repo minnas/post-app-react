@@ -61,4 +61,8 @@ span.some-test {
   font-style: italic;  
   text-decoration: underline;
   font-size: 4rem;
+  transition: all 0.15s ease;
+  &:hover {
+    transform: rotate(15deg);
+  }
 }
