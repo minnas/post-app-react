@@ -44,7 +44,7 @@ const Todos: React.FC<ViewProps> = ({
                     { todo.title }
                   </div>
                   <div className="todo-title completed">
-                    Ready? { todo.completed  ? <FontAwesomeIcon icon={faCheck}/> : <FontAwesomeIcon icon={faTimes}/>}
+                    { todo.completed  ? <FontAwesomeIcon icon={faCheck}/> : <FontAwesomeIcon icon={faTimes}/>}
                   </div>
                 </div>
               ))
@@ -54,6 +54,10 @@ const Todos: React.FC<ViewProps> = ({
               <NavLink className="footer-link home-link" to="/">
                 <FontAwesomeIcon icon={faHome} size="lg"/>
                   Back to Home
+              </NavLink>
+              <NavLink className="footer-link home-link" to="/my-todos">
+                <FontAwesomeIcon icon={faHome} size="lg"/>
+                  My Todos
               </NavLink>
             </div>
           </div>

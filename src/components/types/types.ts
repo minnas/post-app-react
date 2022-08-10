@@ -1,5 +1,5 @@
 export interface Item {
-  id: string,
+  id: string | number,
   title: string
 };
 export interface Post extends Item {
@@ -7,7 +7,9 @@ export interface Post extends Item {
   body?: string
 };
 export interface Todo extends Post {
-  completed: boolean
+  completed: boolean;
 };
-
+export interface MyTodo extends Item {
+  completed: boolean;
+};
 

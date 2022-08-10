@@ -9,7 +9,8 @@ interface Props {
   onClick: MouseEventHandler<HTMLButtonElement>;
   icon?: IconProp
   type?: ButtonType,
-  options?: ButtonOptions
+  options?: ButtonOptions,
+  id?: string
 }
 
 const Button: React.FC<Props> = ({ 
@@ -17,7 +18,8 @@ const Button: React.FC<Props> = ({
     onClick, 
     icon,
     type,
-    options
+    options,
+    id
   }) => {
 
   const className = "tools-button" as string; 
@@ -39,6 +41,7 @@ const Button: React.FC<Props> = ({
         onClick={onClick}
         className={className}
         style={styles.container}
+        id={id}
       >
       <FontAwesomeIcon icon={icon} size="lg"/> 
       </button>
