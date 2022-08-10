@@ -30,12 +30,22 @@ h3.todo-list-header {
 }
 .todo-title {
   line-height: 2rem;
+  transition: all 0.15s ease;
   &.completed {
     padding-top: 1rem;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     grid-column-gap: 1rem;
+    &:hover {
+      font-size: 4rem;
+      & .fa-xmark {
+        color: green;
+      } 
+      & .fa-check {
+        color: red;
+      }
+    }    
   }
 }
 .todos-show-flake {
