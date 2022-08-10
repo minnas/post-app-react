@@ -1,4 +1,4 @@
-import { faBookAtlas, faHome, faSpinner, faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faBookAtlas, faHome, faSpinner, faCheck, faTimes, faSnowflake } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
@@ -28,6 +28,7 @@ const Todos: React.FC<ViewProps> = ({
     return (
       <div>
         <div className="content">
+          <span className="todos-show-flake"><FontAwesomeIcon icon={faSnowflake} size="lg"/></span>
           <div className="content-inner">
             <div className="todos-toolbar">
               <h1>Some Awesome Todos.</h1>
@@ -43,7 +44,7 @@ const Todos: React.FC<ViewProps> = ({
                     { todo.title }
                   </div>
                   <div className="todo-title completed">
-                    Ready? { todo.completed  ? <FontAwesomeIcon icon={faCheck}/> : <FontAwesomeIcon icon={faTimes}/>}
+                    { todo.completed  ? <FontAwesomeIcon icon={faCheck}/> : <FontAwesomeIcon icon={faTimes}/>}
                   </div>
                 </div>
               ))
@@ -53,6 +54,10 @@ const Todos: React.FC<ViewProps> = ({
               <NavLink className="footer-link home-link" to="/">
                 <FontAwesomeIcon icon={faHome} size="lg"/>
                   Back to Home
+              </NavLink>
+              <NavLink className="footer-link home-link" to="/my-todos">
+                <FontAwesomeIcon icon={faHome} size="lg"/>
+                  My Todos
               </NavLink>
             </div>
           </div>
