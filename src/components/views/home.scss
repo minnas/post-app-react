@@ -35,8 +35,9 @@
   align-items: center;  
   & a {
     text-decoration: none;
+    color: #15150e;
     &:hover {
-      opacity: 0.5;
+      opacity: 0.7;
     }
     & svg {
       margin-right: 1rem;
@@ -49,6 +50,7 @@
   right: 4rem;
   color: rgba(255, 255, 255, 0.8);
   font-size: 5rem;
+  z-index:10;
 }
 span.some-test {
   position: fixed;

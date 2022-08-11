@@ -1,4 +1,4 @@
-import { faHome, faLayerGroup, faCheck, faCheckCircle, faTimes, faSnowman } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faLayerGroup, faCheck, faCheckCircle, faTimes, faSnowman, faNoteSticky } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { FormEvent, MouseEventHandler, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
@@ -92,7 +92,7 @@ const MyTodos: React.FC<ViewProps> = ({
             </div>
             <div className="footer todos-footer">
               <NavLink className="footer-link home-link" to="/todos">
-                <FontAwesomeIcon icon={faHome} size="lg"/>
+                <FontAwesomeIcon icon={faNoteSticky} size="lg"/>
                   Back to Todos
               </NavLink>
               <NavLink className="footer-link home-link" to="/">

@@ -1,4 +1,4 @@
-import { faBookAtlas, faHome, faSpinner, faCheck, faTimes, faSnowflake } from "@fortawesome/free-solid-svg-icons";
+import { faBookAtlas, faHome, faSpinner, faCheck, faTimes, faSnowflake, faLayerGroup } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
@@ -56,7 +56,7 @@ const Todos: React.FC<ViewProps> = ({
                   Back to Home
               </NavLink>
               <NavLink className="footer-link home-link" to="/my-todos">
-                <FontAwesomeIcon icon={faHome} size="lg"/>
+                <FontAwesomeIcon icon={faLayerGroup} size="lg"/>
                   My Todos
               </NavLink>
             </div>
