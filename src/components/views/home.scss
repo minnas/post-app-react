@@ -12,7 +12,8 @@
   margin: auto;
 }
 .content-inner {
-  height: 100%;
+  height: calc(100vh - 5rem);
+  overflow: hidden;
   width: 80%;
   max-width: 80rem;
   padding: 3rem 6rem;
