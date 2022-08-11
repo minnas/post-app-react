@@ -37,7 +37,7 @@ const Todos: React.FC<ViewProps> = ({
             <h3 className="todo-list-header">Current {count} todos in the list</h3>
             <div className="awesome-todo-list">
             {
-              loading ? <div><FontAwesomeIcon icon={faSpinner} size="lg"/></div> : todos.map((todo:Todo) => (
+              loading ? <div className="todo-item-container todos-loading"><FontAwesomeIcon className="spinner" icon={faSpinner} size="lg"/></div> : todos.map((todo:Todo) => (
                 <div className="todo-item-container" key={todos.indexOf(todo).toString()}>
                   <div className="todo-number">{todos.indexOf(todo).toString()}</div>
                   <div className="todo-title">
