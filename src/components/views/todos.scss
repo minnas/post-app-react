@@ -42,20 +42,24 @@ h3.todo-list-header {
   line-height: 2rem;
   transition: all 0.15s ease;
   &.completed {
-    padding-top: 1rem;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     grid-column-gap: 2rem;
-    &:hover {
-      font-size: 4rem;
+    font-size: 2rem;
+    & button:hover {
       & .fa-xmark {
-        color: green;
-      } 
-      & .fa-check {
         color: red;
+      } 
+      & .fa-circle-check {
+        color: green;
       }
-    }    
+    }
+    & .fa-check {
+      &:hover {
+        color: green;
+      }
+    }
   }
 }
 .todos-show-flake {
