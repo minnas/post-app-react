@@ -1,9 +1,11 @@
 import { faHome, faLayerGroup, faCheck, faCheckCircle, faTimes, faSnowman, faNoteSticky } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { FormEvent, MouseEventHandler, useEffect, useState } from "react";
+import { useSelector, useDispatch } from 'react-redux';
+import { add, update, remove } from './../../store/store';
 import { NavLink } from "react-router-dom";
 import Button from "../tools/Button";
-import { ButtonType, ButtonOptions } from "../tools/settings";
+import { ButtonType, ButtonOptions, ButtonDefaults } from "../tools/settings";
 import { MyTodo } from "../types/types";
 import { ViewProps } from "../types/view";
 import './home.scss';
@@ -12,40 +14,36 @@ import './mytodos.scss';
 
 const MyTodos: React.FC<ViewProps> = ({ 
   }) => {
-    const [todos, setTodos] = useState([] as MyTodo[]);
+    //@ts-ignore
+    const todos = useSelector((state) => state.todos);
+    const dispatch = useDispatch();    
     const [count, setCount] = useState(0);
 
-    const removeTodo = (id: number) => {
-      setTodos((prev) => prev.filter(t => t.id != id));
-    };
-
     const completeTodo = (id: number) => {
-      const newState = todos.map(todo => {
-        if (todo.id === id) {
-          return {
-              id, 
-              title: todo.title, 
-              completed: true};
-        }
-        return todo;
-      });  
-      setTodos(newState);
+      const title = (todos.find((t:MyTodo) => t.id == id) as MyTodo)?.title;
+      const completed = true;
+      dispatch(update({id, title, completed}));
     };    
 
     const setTodoDone: MouseEventHandler = (event) => {
-      event.preventDefault();
       const btn = event.currentTarget as HTMLButtonElement;
       completeTodo(Number.parseInt(btn.id));
+      return false;
     };  
-
+    
     const addTodo = (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       console.log(e.currentTarget);
       const title = e.currentTarget.todoTitle.value;
       e.currentTarget.todoTitle.value = '';
       const id = todos.length;
-      setTodos((prev) => [...prev,  {title, id} as MyTodo])
+      dispatch(add({title, id} as MyTodo));
     }
+    const removeTodo: MouseEventHandler = (event) => {
+      const btn = event.currentTarget as HTMLButtonElement;
+      const id = btn.id;      
+      dispatch(remove({id}));
+    };  
     
     useEffect(() => {
       setCount(todos.length);
@@ -84,7 +82,7 @@ const MyTodos: React.FC<ViewProps> = ({
                   </div>  
                   <div className="todo-title completed">
                     { todo.completed  ? <FontAwesomeIcon icon={faCheck}/> : <Button id={todo.id as string} type={ButtonType.ICON_ONLY} options={btnOptions} icon={faCheckCircle} onClick={setTodoDone}/> }
-                    <Button type={ButtonType.ICON_ONLY} options={btnOptions} icon={faTimes} onClick={() => {removeTodo(todo.id as number)}}/>
+                      <Button id={todo.id as string} type={ButtonType.ICON_ONLY} options={btnOptions} icon={faTimes} onClick={removeTodo}/>
                   </div>
                 </div>
               ))

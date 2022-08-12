@@ -33,15 +33,17 @@ const Button: React.FC<Props> = ({
       border: options?.border || ButtonDefaults.BORDER,
     } as React.CSSProperties,
   };  
+  const onlyIcon = type == ButtonType.ICON_ONLY;
 
   return (
     <button 
       onClick={onClick}
       className={className}
       style={styles.container}
+      id={id}
     >
     { icon ? <FontAwesomeIcon icon={icon} size="lg"/> : '' }
-    { ButtonType.ICON_ONLY ? '' : <span>{label}</span> }
+    { onlyIcon ? '' : <span>{label}</span> }
     </button>
   );
 }
