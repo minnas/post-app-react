@@ -27,4 +27,5 @@ export enum TooltipType {
   LEFT,
   RIGHT,
   BOTTOM
-} 
+};
+ 

@@ -1,8 +1,9 @@
-import { faBookAtlas, faHome, faSpinner, faCheck, faTimes, faSnowflake, faLayerGroup } from "@fortawesome/free-solid-svg-icons";
+import { faBookAtlas, faHome, faCheck, faTimes, faSnowflake, faLayerGroup } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { ApiType, search } from "../../api/api";
+import Spinner from "../tools/Spinner";
 import { Todo } from "../types/types";
 import { ViewProps } from "../types/view";
 import './home.scss';
@@ -37,7 +38,7 @@ const Todos: React.FC<ViewProps> = ({
             <h3 className="todo-list-header">Current {count} todos in the list</h3>
             <div className="awesome-todo-list">
             {
-              loading ? <div className="todo-item-container todos-loading"><FontAwesomeIcon className="spinner" icon={faSpinner} size="lg"/></div> : todos.map((todo:Todo) => (
+              loading ? <div className="todo-item-container todos-loading"><Spinner/></div> : todos.map((todo:Todo) => (
                 <div className="todo-item-container" key={todos.indexOf(todo).toString()}>
                   <div className="todo-number">{todos.indexOf(todo).toString()}</div>
                   <div className="todo-title">
