@@ -4,14 +4,16 @@
     flex-direction: column;
     grid-row-gap: 2rem;
     padding: 2rem 0;
-    label {
+    & label {
       font-size: 2rem;
       font-style: italic;
     }
-    input {
-      border: 1px dotted rgba(0,0,0,.9);
-      border-radius: .25rem;
-      padding: .5rem; 
+    & input {
+      border: 3px dashed rgba(0, 0, 0, 0.9);
+      border-radius: 1rem;
+      padding: 0.5rem;
+      background: transparent;
+      user-select: none;
     }
   }
 }
