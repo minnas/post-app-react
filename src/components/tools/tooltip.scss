@@ -1,0 +1,63 @@
+.tooltip {
+  transition: all 0.15s ease;
+  min-width: 10rem;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  border-radius: .5rem;
+  padding: 1rem 0.5rem;
+  position: absolute;
+  transform: translate(0, -50%);
+  top: 50%;
+  left: 50%;
+  border: 1px solid #000;
+  z-index: 10;
+  font-family: "Open sans", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+}
+.tooltip.bottom::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  margin-top: -0.5rem;
+  border-width: 0.5rem;
+  border-style: solid;
+  border-color: transparent transparent #000
+    transparent;
+  filter: drop-shadow(0 -1px 1px transparent);
+}
+.tooltip.right {
+  left: calc(100% + 2rem);
+}
+.tooltip.right::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -0.5rem;
+    border-width: 0.5rem;
+    border-style: solid;
+    border-color: transparent #000 transparent
+      transparent;
+}
+.tooltip.left {
+  left: auto;
+  right: calc(100% + 1.1rem);
+}
+.tooltip.top {
+  top: auto;
+  bottom: -25%;
+}
+.tooltip-container {
+  position: relative;
+}
+.toggleTooltip-enter-active,
+.toggleTooltip-leave-active {
+  transition: opacity 0.15s ease;
+}
+.toggleTooltip-enter-from,
+.toggleTooltip-leave-to {
+  opacity: 0;
+}

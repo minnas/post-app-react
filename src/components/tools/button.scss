@@ -1,7 +1,7 @@
 .tools-button {
   transition: all .15s ease;
   margin: 1rem 0.5rem;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem;
   font-weight: bold;
   font-size: 2rem;
   &:hover {
@@ -10,6 +10,6 @@
   &.pressed-darkmode {
     background-color: #676461;
     filter: drop-shadow(0 0 10rem #000000);  
-    font-size: 4rem;
+    font-size: 3rem;
   }
 }

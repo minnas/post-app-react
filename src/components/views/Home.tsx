@@ -3,7 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { MouseEventHandler } from "react";
 import { NavLink } from "react-router-dom";
 import Button from "../tools/Button";
-import { ButtonDefaults, ButtonType } from "../tools/settings";
+import Tooltip from "../tools/Tooltip";
+import { ButtonDefaults, ButtonType, TooltipType } from "../tools/settings";
 import { ViewProps } from "../types/view";
 import './home.scss';
 
@@ -26,12 +27,18 @@ const Home: React.FC<ViewProps> = ({
       btn.classList.remove("pressed-darkmode");
     };  
 
+    const tooltip = "This is a small app which uses React 18 + Typescript";
+
     return (
       <div>
         <div className="content">
         <span className="home-cloud-sun"><FontAwesomeIcon icon={faCloudSun} size="lg"/></span>
           <div className="content-inner">
             <h1>Some Awesome Buttons.</h1>
+            <div className="about-info">
+              <span>About the App</span>
+              <Tooltip type={TooltipType.RIGHT} label={<FontAwesomeIcon icon={faInfo} size="lg"/>} content={tooltip}></Tooltip>
+            </div>
             <div className="awesome-button-list">
               <Button label="profi" onClick={clickMe} icon={faLevelUp}/>
               <Button label="check" onClick={clickMe} icon={faCheckCircle}/>

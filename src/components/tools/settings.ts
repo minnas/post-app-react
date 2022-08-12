@@ -21,3 +21,10 @@ export enum ButtonDefaults{
   ALING_SELF = "unset",
   SELECTED = "#93615a"
 };
+
+export enum TooltipType {
+  TOP,
+  LEFT,
+  RIGHT,
+  BOTTOM
+} 

@@ -23,7 +23,6 @@ const Button: React.FC<Props> = ({
   }) => {
 
   const className = "tools-button" as string; 
-  //const faIcon = icon ? icon : faInfo;
 
   const styles = {
     container: {
@@ -35,26 +34,14 @@ const Button: React.FC<Props> = ({
     } as React.CSSProperties,
   };  
 
-  if(type == ButtonType.ICON_ONLY && icon) {
-    return (
-      <button 
-        onClick={onClick}
-        className={className}
-        style={styles.container}
-        id={id}
-      >
-      <FontAwesomeIcon icon={icon} size="lg"/> 
-      </button>
-    );
-  }  
   return (
     <button 
       onClick={onClick}
       className={className}
       style={styles.container}
     >
-    {icon ? <FontAwesomeIcon icon={icon} size="lg"/> : ''}
-    <span>{label}</span>
+    { icon ? <FontAwesomeIcon icon={icon} size="lg"/> : '' }
+    { ButtonType.ICON_ONLY ? '' : <span>{label}</span> }
     </button>
   );
 }

@@ -1,15 +1,15 @@
-export interface Item {
+export type Item = {
   id: string | number,
   title: string
 };
-export interface Post extends Item {
+export type Post = Item  & {
   userId: string,
   body?: string
 };
-export interface Todo extends Post {
+export type Todo = Post & {
   completed: boolean;
 };
-export interface MyTodo extends Item {
+export type MyTodo = Item & {
   completed: boolean;
 };
 
