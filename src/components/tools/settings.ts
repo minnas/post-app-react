@@ -1,3 +1,5 @@
+import { faDiagramSuccessor } from "@fortawesome/free-solid-svg-icons";
+
 export enum ButtonType {
   ICON_ONLY,
   DEFAULT  
@@ -31,5 +33,10 @@ export enum TooltipType {
 
 export type TooltipOptions = {
   fillBgColorMode?:boolean;
+};
+
+export enum ToastType {
+  SUCCESS,
+  ERROR
 };
  

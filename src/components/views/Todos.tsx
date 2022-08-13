@@ -8,7 +8,8 @@ import { add } from './../../store/store';
 import { MyTodo, Todo } from "../types/types";
 import { ViewProps } from "../types/view";
 import Button from "../tools/Button";
-import { ButtonOptions, ButtonType, TooltipType } from "../tools/settings";
+import { ButtonOptions, ButtonType, TooltipType, ToastType } from "../tools/settings";
+import Toast from "../tools/Toast";
 import './home.scss';
 import './todos.scss';
 import { useDispatch, useSelector } from "react-redux";
@@ -19,6 +20,7 @@ const Todos: React.FC<ViewProps> = ({
     const [todos, setTodos] = useState([] as Todo[]);
     const [count, setCount] = useState(0);
     const [loading, setLoading] = useState(false);
+    const [toastVisible, setToastVisible] = useState(false);
     const dispatch = useDispatch();
     //@ts-ignore    
     const myTodos = useSelector((state) => state.todos);
@@ -46,6 +48,10 @@ const Todos: React.FC<ViewProps> = ({
                   id: myTodos.length, 
                   title: todo.title 
                 } as MyTodo));
+        setToastVisible(true);  
+        setTimeout(() => {
+          setToastVisible(false); 
+        }, 400);
       }
     };  
 
@@ -73,7 +79,9 @@ const Todos: React.FC<ViewProps> = ({
               <h3 className="todo-list-header">Current {count} todos in the list</h3>
               <Tooltip type={TooltipType.RIGHT} label={<FontAwesomeIcon icon={faLightbulb} size="lg"/>} content={tooltip}></Tooltip>
             </div>
-
+            {
+              toastVisible ? <Toast content="Todo copied to my todos"/> : ''
+            }
             <div className="awesome-todo-list">
             {
               loading ? <div className="todo-item-container todos-loading"><Spinner/></div> : todos.map((todo:Todo) => (

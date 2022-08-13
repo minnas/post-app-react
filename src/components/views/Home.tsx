@@ -27,7 +27,7 @@ const Home: React.FC<ViewProps> = ({
       btn.classList.remove("pressed-darkmode");
     };  
 
-    const tooltip = "There are dummy buttons which do nothing (except changes color + size)";
+    const tooltip = "These are dummy buttons which do nothing really";
 
     return (
       <div>
