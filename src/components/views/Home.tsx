@@ -36,7 +36,7 @@ const Home: React.FC<ViewProps> = ({
           <div className="content-inner">
             <h1>Some Awesome Buttons.</h1>
             <div className="about-info">
-              <span>About the App</span>
+              <span>About the Buttons</span>
               <Tooltip type={TooltipType.RIGHT} label={<FontAwesomeIcon icon={faInfo} size="lg"/>} content={tooltip}></Tooltip>
             </div>
             <div className="awesome-button-list">
