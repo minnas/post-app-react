@@ -27,7 +27,7 @@ const Home: React.FC<ViewProps> = ({
       btn.classList.remove("pressed-darkmode");
     };  
 
-    const tooltip = "This is a small app which uses React 18 + Typescript";
+    const tooltip = "There are dummy buttons which do nothing (except changes color + size)";
 
     return (
       <div>
