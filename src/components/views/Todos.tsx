@@ -1,19 +1,27 @@
-import { faBookAtlas, faHome, faCheck, faTimes, faSnowflake, faLayerGroup } from "@fortawesome/free-solid-svg-icons";
+import { faBookAtlas, faHome, faCheck, faTimes, faSnowflake, faLayerGroup, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState } from "react";
+import React, { MouseEventHandler, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { ApiType, search } from "../../api/api";
 import Spinner from "../tools/Spinner";
-import { Todo } from "../types/types";
+import { add } from './../../store/store';
+import { MyTodo, Todo } from "../types/types";
 import { ViewProps } from "../types/view";
+import Button from "../tools/Button";
+import { ButtonOptions, ButtonType } from "../tools/settings";
 import './home.scss';
 import './todos.scss';
+import { useDispatch, useSelector } from "react-redux";
 
 const Todos: React.FC<ViewProps> = ({ 
   }) => {
     const [todos, setTodos] = useState([] as Todo[]);
     const [count, setCount] = useState(0);
     const [loading, setLoading] = useState(false);
+    const dispatch = useDispatch();
+    //@ts-ignore    
+    const myTodos = useSelector((state) => state.todos);
+    
     useEffect(() => {
       setLoading(true);
       search(ApiType.TODOS)
@@ -26,6 +34,29 @@ const Todos: React.FC<ViewProps> = ({
         setLoading(false);
       });
     }, []);
+
+    const copyToMyTodos: MouseEventHandler = (event) => {
+      const btn = event.currentTarget as HTMLButtonElement;
+      const id = btn.id;   
+      const todo = todos.find(t => t.id.toString() === id.toString());   
+      if(todo) {
+        dispatch(add({ 
+                  externalId : id, 
+                  id: myTodos.length, 
+                  title: todo.title 
+                } as MyTodo));
+      }
+    };  
+
+    const copyDisabled = (id:string) => {
+      return myTodos.find((t:MyTodo) => t.externalId === id.toString()) != undefined;   
+    };
+
+    const btnOptions = {
+      padding: "0",
+      margin: "0"
+    } as ButtonOptions;
+
     return (
       <div>
         <div className="content">
@@ -46,6 +77,7 @@ const Todos: React.FC<ViewProps> = ({
                   </div>
                   <div className="todo-title completed">
                     { todo.completed  ? <FontAwesomeIcon icon={faCheck}/> : <FontAwesomeIcon icon={faTimes}/>}
+                    <Button id={todo.id as string} icon={faPlusCircle} type={ButtonType.ICON_ONLY} label="copy" disabled={copyDisabled(todo.id as string)} onClick={copyToMyTodos} options={btnOptions}/>
                   </div>
                 </div>
               ))

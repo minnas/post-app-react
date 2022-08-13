@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TooltipType } from "./settings";
+import { TooltipOptions, TooltipType } from "./settings";
 import './tooltip.scss';
 
 interface Props {
@@ -7,13 +7,15 @@ interface Props {
   content?: React.ReactNode;
   type: TooltipType;
   id?: string;
+  options?:TooltipOptions
 }
 
 const Tooltip: React.FC<Props> = ({ 
     label,
     content, 
     type,
-    id
+    id,
+    options
   }) => {
   const [visible, setVisible] = useState(false);
   let tooltipClass = "tooltip" as string; 
@@ -33,8 +35,12 @@ const Tooltip: React.FC<Props> = ({
     break;  
   }
 
+  if(options?.fillBgColorMode) {
+    tooltipClass += " fill-color-mode"; 
+  }
+
   return (
-    <div className="tooltip-container" onMouseEnter={() => setVisible(true)}
+    <div id={id} className="tooltip-container" onMouseEnter={() => setVisible(true)}
       onMouseLeave={() => setVisible(false)}
     >
       {label}

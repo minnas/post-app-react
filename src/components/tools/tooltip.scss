@@ -17,6 +17,9 @@
   font-family: "Open sans", sans-serif;
   font-size: 1.5rem;
   line-height: 1.8rem;
+  &.fill-color-mode {
+    background-color: rgba(147, 97, 90, 1);
+  }
 }
 .tooltip.bottom::before {
   content: "";

@@ -11,5 +11,6 @@ export type Todo = Post & {
 };
 export type MyTodo = Item & {
   completed: boolean;
+  externalId?:string;
 };
 

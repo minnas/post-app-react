@@ -43,10 +43,22 @@ h3.todo-list-header {
   transition: all 0.15s ease;
   &.completed {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     grid-column-gap: 2rem;
     font-size: 2rem;
+    min-width: 8rem;
+    & .fa-xmark {
+      min-width: 2rem;
+      &:hover {
+        color: red;
+      }
+    } 
+    & .fa-check {
+      &:hover {
+        color: green;
+      }
+    }
     & button:hover {
       & .fa-xmark {
         color: red;
@@ -55,10 +67,18 @@ h3.todo-list-header {
         color: green;
       }
     }
-    & .fa-check {
-      &:hover {
-        color: green;
-        font-size: 3.5rem;
+    & button[disabled] {
+      opacity:0.5;
+    }
+  }
+  &.copy-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & button {
+      font-size: 2rem;
+      &[disabled] {
+        opacity:0.5;
       }
     }
   }

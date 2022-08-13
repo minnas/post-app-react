@@ -10,7 +10,8 @@ interface Props {
   icon?: IconProp
   type?: ButtonType,
   options?: ButtonOptions,
-  id?: string
+  id?: string,
+  disabled?: boolean
 }
 
 const Button: React.FC<Props> = ({ 
@@ -19,7 +20,8 @@ const Button: React.FC<Props> = ({
     icon,
     type,
     options,
-    id
+    id,
+    disabled
   }) => {
 
   const className = "tools-button" as string; 
@@ -41,6 +43,7 @@ const Button: React.FC<Props> = ({
       className={className}
       style={styles.container}
       id={id}
+      disabled={disabled}
     >
     { icon ? <FontAwesomeIcon icon={icon} size="lg"/> : '' }
     { onlyIcon ? '' : <span>{label}</span> }

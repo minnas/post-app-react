@@ -1,16 +1,17 @@
-import { faHome, faLayerGroup, faCheck, faCheckCircle, faTimes, faSnowman, faNoteSticky } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faLayerGroup, faCheck, faCheckCircle, faTimes, faSnowman, faNoteSticky, faInfo } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { FormEvent, MouseEventHandler, useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { add, update, remove } from './../../store/store';
 import { NavLink } from "react-router-dom";
 import Button from "../tools/Button";
-import { ButtonType, ButtonOptions, ButtonDefaults } from "../tools/settings";
+import { ButtonType, ButtonOptions, TooltipType, TooltipOptions } from "../tools/settings";
 import { MyTodo } from "../types/types";
 import { ViewProps } from "../types/view";
 import './home.scss';
 import './todos.scss';
 import './mytodos.scss';
+import Tooltip from "../tools/Tooltip";
 
 const MyTodos: React.FC<ViewProps> = ({ 
   }) => {
@@ -54,6 +55,11 @@ const MyTodos: React.FC<ViewProps> = ({
       margin: "0"
     } as ButtonOptions;
 
+    const tooltipOptions = {
+      fillBgColorMode: true
+    } as TooltipOptions;
+
+    const tooltip = "You can add todo also from dummy todos list by pressing plus-sign";  
     return (
       <div>
         <div className="content">
@@ -62,6 +68,7 @@ const MyTodos: React.FC<ViewProps> = ({
             <div className="todos-toolbar">
               <h1>My Own Todos</h1>
               <FontAwesomeIcon icon={faLayerGroup} size="lg"/>
+              <Tooltip options={tooltipOptions} type={TooltipType.RIGHT} label={<FontAwesomeIcon icon={faInfo} size="lg"/>} content={tooltip}></Tooltip>
             </div>
             <h3 className="todo-list-header">Current {count} todos in the list</h3>
             <div className="todo-input-area">
@@ -100,6 +107,7 @@ const MyTodos: React.FC<ViewProps> = ({
             </div>
           </div>
         </div>
+
       </div>
     );
 }

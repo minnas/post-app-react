@@ -28,4 +28,8 @@ export enum TooltipType {
   RIGHT,
   BOTTOM
 };
+
+export type TooltipOptions = {
+  fillBgColorMode?:boolean;
+};
  
