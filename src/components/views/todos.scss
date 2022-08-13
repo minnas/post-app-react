@@ -91,6 +91,21 @@ h3.todo-list-header {
   font-size: 5rem;
   z-index: 10;
 }
-/*
-here todo list hover font size 3rem + icon styles
-*/
+.todo-list-header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column-gap: 2rem;
+  & .tooltip-container {
+    align-self: flex-start;
+    & svg {
+      transform: all .25s ease;
+      font-size: 2rem;
+      &:hover {
+        color: drop-shadow(0,0, 2rem, #FFFF8A);
+        color: #FFFF00;
+        opacity: 0.9;
+      }
+    }
+  }
+}

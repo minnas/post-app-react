@@ -1,4 +1,4 @@
-import { faBookAtlas, faHome, faCheck, faTimes, faSnowflake, faLayerGroup, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+import { faBookAtlas, faHome, faCheck, faTimes, faSnowflake, faLayerGroup, faPlusCircle, faLightbulb } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { MouseEventHandler, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
@@ -8,10 +8,11 @@ import { add } from './../../store/store';
 import { MyTodo, Todo } from "../types/types";
 import { ViewProps } from "../types/view";
 import Button from "../tools/Button";
-import { ButtonOptions, ButtonType } from "../tools/settings";
+import { ButtonOptions, ButtonType, TooltipType } from "../tools/settings";
 import './home.scss';
 import './todos.scss';
 import { useDispatch, useSelector } from "react-redux";
+import Tooltip from "../tools/Tooltip";
 
 const Todos: React.FC<ViewProps> = ({ 
   }) => {
@@ -56,6 +57,8 @@ const Todos: React.FC<ViewProps> = ({
       padding: "0",
       margin: "0"
     } as ButtonOptions;
+    
+    const tooltip = "You can copy todo to own Todos by clicking plus button";  
 
     return (
       <div>
@@ -66,7 +69,11 @@ const Todos: React.FC<ViewProps> = ({
               <h1>Some Awesome Todos.</h1>
               <FontAwesomeIcon icon={faBookAtlas} size="lg"/>
             </div>
-            <h3 className="todo-list-header">Current {count} todos in the list</h3>
+            <div className="todo-list-header-container">
+              <h3 className="todo-list-header">Current {count} todos in the list</h3>
+              <Tooltip type={TooltipType.RIGHT} label={<FontAwesomeIcon icon={faLightbulb} size="lg"/>} content={tooltip}></Tooltip>
+            </div>
+
             <div className="awesome-todo-list">
             {
               loading ? <div className="todo-item-container todos-loading"><Spinner/></div> : todos.map((todo:Todo) => (

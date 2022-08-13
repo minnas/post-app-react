@@ -59,7 +59,7 @@ const MyTodos: React.FC<ViewProps> = ({
       fillBgColorMode: true
     } as TooltipOptions;
 
-    const tooltip = "You can add todo also from dummy todos list by pressing plus-sign";  
+    const tooltip = "Add todo also from last page";  
     return (
       <div>
         <div className="content">
@@ -68,7 +68,7 @@ const MyTodos: React.FC<ViewProps> = ({
             <div className="todos-toolbar">
               <h1>My Own Todos</h1>
               <FontAwesomeIcon icon={faLayerGroup} size="lg"/>
-              <Tooltip options={tooltipOptions} type={TooltipType.RIGHT} label={<FontAwesomeIcon icon={faInfo} size="lg"/>} content={tooltip}></Tooltip>
+              <Tooltip options={tooltipOptions} type={TooltipType.LEFT} label={<FontAwesomeIcon icon={faInfo} size="lg"/>} content={tooltip}></Tooltip>
             </div>
             <h3 className="todo-list-header">Current {count} todos in the list</h3>
             <div className="todo-input-area">
