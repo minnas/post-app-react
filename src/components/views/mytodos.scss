@@ -36,3 +36,8 @@
 .todo-number {
   padding-bottom: 0;
 } 
+.todos-toolbar {
+  & .fa-info:hover {
+    cursor: pointer;
+  }
+}
