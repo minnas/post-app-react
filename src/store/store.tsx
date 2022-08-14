@@ -10,7 +10,7 @@ const myTodoSlice = createSlice({
       state.push(action.payload as MyTodo);
     },
     remove:(state, action) => {
-      state = state.filter(t => t.id != action.payload.id as number);
+      return state.filter(t => t.id != action.payload.id as number);
     },
     update: (state, action) => {
       const index = state.findIndex(t => t.id == (action.payload as MyTodo).id);
