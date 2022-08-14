@@ -16,7 +16,7 @@ import Tooltip from "../tools/Tooltip";
 const MyTodos: React.FC<ViewProps> = ({ 
   }) => {
     //@ts-ignore
-    const todos = useSelector((state) => state.todos);
+    const todos = useSelector((state) => state.todos as MyTodo[]);
     const dispatch = useDispatch();    
     const [count, setCount] = useState(0);
 
