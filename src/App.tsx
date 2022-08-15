@@ -6,8 +6,8 @@ import MyTodos from "./components/views/MyTodos";
 import store from "./store/store";
 import { Provider } from "react-redux";
 import Tools from "./components/views/Tools";
-import "./app.scss";
 import Layout from "./components/views/Layout";
+import "./app.scss";
 
 const App = (): JSX.Element => {
   return (
