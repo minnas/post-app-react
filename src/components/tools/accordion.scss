@@ -1,0 +1,43 @@
+.accordion-container {
+  & .accordion-container-inner {
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+    justify-content: center;
+    &.open {
+      filter: drop-shadow(0 0 5rem #93615a);
+    }
+    & button {
+      transition: all .15s ease;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 1rem 1.5rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: rgba(0,0,0, .9);
+      &:hover {
+        background-color: rgba(147, 97, 90, .6);
+      }
+      & svg {
+        font-size: 2rem;
+      }
+    }
+    & .accordion-content {
+      visibility: hidden;
+      transition: all .15s ease;
+      padding: 1rem 1.5rem;
+      height: 0;
+      &.open {
+        visibility: visible;
+        height: auto;
+        filter: drop-shadow(0 0 5rem #93615a);
+      }
+    }
+  }
+
+}
