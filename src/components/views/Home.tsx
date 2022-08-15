@@ -1,18 +1,15 @@
 import { faBookAtlas, faCheckCircle, faExclamationCircle, faInfo, faLevelUp, faTimes, 
         faNoteSticky, faCloudSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { MouseEventHandler } from "react";
+import { MouseEventHandler } from "react";
 import { NavLink } from "react-router-dom";
 import Button from "../tools/Button";
 import Tooltip from "../tools/Tooltip";
 import { ButtonDefaults, ButtonType, TooltipType } from "../tools/settings";
-import { ViewProps } from "../types/view";
 
 import './home.scss';
 
-const Home: React.FC<ViewProps> = ({ 
-  }) => {
-
+const Home = () => {
     /**awesome buttons */
     const clickMe: MouseEventHandler = (event) => {
       event.preventDefault();

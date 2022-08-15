@@ -7,15 +7,13 @@ import { NavLink } from "react-router-dom";
 import Button from "../tools/Button";
 import { ButtonType, ButtonOptions, TooltipType, TooltipOptions } from "../tools/settings";
 import { MyTodo } from "../types/types";
-import { ViewProps } from "../types/view";
 import './home.scss';
 import './todos.scss';
 import './mytodos.scss';
 import Tooltip from "../tools/Tooltip";
 
-const MyTodos: React.FC<ViewProps> = ({ 
-  }) => {
-    const todos = useSelector((state: RootState) => state.todos);
+const MyTodos = () => {
+  const todos = useSelector((state: RootState) => state.todos);
     const dispatch = useDispatch();    
     const [count, setCount] = useState(0);
 

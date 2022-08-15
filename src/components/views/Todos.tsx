@@ -6,7 +6,6 @@ import { ApiType, search } from "../../api/api";
 import Spinner from "../tools/Spinner";
 import { add, RootState } from './../../store/store';
 import { MyTodo, Todo } from "../types/types";
-import { ViewProps } from "../types/view";
 import Button from "../tools/Button";
 import { ButtonOptions, ButtonType, TooltipType, ToastType } from "../tools/settings";
 import Toast from "../tools/Toast";
@@ -15,9 +14,8 @@ import './todos.scss';
 import { useDispatch, useSelector } from "react-redux";
 import Tooltip from "../tools/Tooltip";
 
-const Todos: React.FC<ViewProps> = ({ 
-  }) => {
-    const [todos, setTodos] = useState([] as Todo[]);
+const Todos = () => {
+  const [todos, setTodos] = useState([] as Todo[]);
     const [count, setCount] = useState(0);
     const [loading, setLoading] = useState(false);
     const [toastVisible, setToastVisible] = useState(false);
