@@ -2,7 +2,7 @@ import { faHome, faLayerGroup, faCheck, faCheckCircle, faTimes, faSnowman, faNot
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { FormEvent, MouseEventHandler, useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import { add, update, remove } from './../../store/store';
+import { add, update, remove, RootState } from './../../store/store';
 import { NavLink } from "react-router-dom";
 import Button from "../tools/Button";
 import { ButtonType, ButtonOptions, TooltipType, TooltipOptions } from "../tools/settings";
@@ -15,8 +15,7 @@ import Tooltip from "../tools/Tooltip";
 
 const MyTodos: React.FC<ViewProps> = ({ 
   }) => {
-    //@ts-ignore
-    const todos = useSelector((state) => state.todos as MyTodo[]);
+    const todos = useSelector((state: RootState) => state.todos);
     const dispatch = useDispatch();    
     const [count, setCount] = useState(0);
 

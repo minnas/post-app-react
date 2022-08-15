@@ -4,7 +4,7 @@ import React, { MouseEventHandler, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { ApiType, search } from "../../api/api";
 import Spinner from "../tools/Spinner";
-import { add } from './../../store/store';
+import { add, RootState } from './../../store/store';
 import { MyTodo, Todo } from "../types/types";
 import { ViewProps } from "../types/view";
 import Button from "../tools/Button";
@@ -22,8 +22,7 @@ const Todos: React.FC<ViewProps> = ({
     const [loading, setLoading] = useState(false);
     const [toastVisible, setToastVisible] = useState(false);
     const dispatch = useDispatch();
-    //@ts-ignore    
-    const myTodos = useSelector((state) => state.todos);
+    const myTodos = useSelector((state:RootState) => state.todos);
     
     useEffect(() => {
       setLoading(true);
