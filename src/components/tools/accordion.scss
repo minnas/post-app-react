@@ -28,12 +28,12 @@
       }
     }
     & .accordion-content {
-      visibility: hidden;
-      transition: all 0.05s linear;
+      opacity: 0;
+      transition: all 0.15s ease;
       padding: 1rem 1.5rem;
       height: 0;
       &.open {
-        visibility: visible;
+        opacity: 1;
         height: auto;
         filter: drop-shadow(0 0 5rem #93615a);
       }
