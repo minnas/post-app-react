@@ -29,7 +29,7 @@
     }
     & .accordion-content {
       visibility: hidden;
-      transition: all .15s ease;
+      transition: all 0.05s linear;
       padding: 1rem 1.5rem;
       height: 0;
       &.open {
@@ -39,5 +39,4 @@
       }
     }
   }
-
 }

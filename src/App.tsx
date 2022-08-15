@@ -6,6 +6,7 @@ import './custom.scss';
 import MyTodos from "./components/views/MyTodos";
 import store from "./store/store";
 import { Provider } from "react-redux";
+import Tools from "./components/views/Tools";
 
 const App = (): JSX.Element => {
   return (
@@ -15,6 +16,7 @@ const App = (): JSX.Element => {
           <Route path="/" element={<Home />} />
           <Route path="/todos" element={<Todos />} />
           <Route path="/my-todos" element={<MyTodos />} />
+          <Route path="/tools" element={<Tools />} />
         </Routes>
       </Provider>
     </Router>  

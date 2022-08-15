@@ -99,9 +99,9 @@ const MyTodos: React.FC<ViewProps> = ({
                 <FontAwesomeIcon icon={faNoteSticky} size="lg"/>
                   Back to Todos
               </NavLink>
-              <NavLink className="footer-link home-link" to="/">
+              <NavLink className="footer-link home-link" to="/tools">
                 <FontAwesomeIcon icon={faHome} size="lg"/>
-                  Goto to Home
+                  Goto to Tools
               </NavLink>
             </div>
           </div>
