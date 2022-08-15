@@ -1,4 +1,4 @@
-import { faHammer, faCloudMoonRain, faPlusSquare, faMinusSquare, faRefresh, faInfo, faHome } from "@fortawesome/free-solid-svg-icons";
+import { faHammer, faCloudMoonRain, faPlusSquare, faMinusSquare, faRefresh, faInfo, faHome, faNoteSticky } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { MouseEventHandler } from "react";
 import { NavLink } from "react-router-dom";
@@ -63,7 +63,7 @@ return (
       </div>
       <div className="footer">
         <NavLink className="footer-link todo-link" to="/my-todos">
-            <FontAwesomeIcon icon={faHome} size="lg"/>
+            <FontAwesomeIcon icon={faNoteSticky} size="lg"/>
               Back to My Todos
         </NavLink>
         <NavLink className="footer-link todo-link" to="/">
