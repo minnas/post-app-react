@@ -1,4 +1,5 @@
 import { createSlice, configureStore } from '@reduxjs/toolkit'
+import { pages } from '../components/types/pages';
 import { MyTodo, Post } from '../components/types/types';
 
 const myTodoSlice = createSlice({
@@ -24,13 +25,13 @@ const myBookmarkSlice = createSlice({
   name: 'myBookmarks',
   initialState: [] as Post[],
   reducers: {
-    add: (state, action) => {
+    addBookmark: (state, action) => {
       state.push(action.payload as Post);
     },
-    remove:(state, action) => {
+    removeBookmark:(state, action) => {
       return state.filter(t => t.id != action.payload.id as number);
     },
-    update: (state, action) => {
+    updateBookmark: (state, action) => {
       const index = state.findIndex(t => t.id == (action.payload as MyTodo).id);
       if(index > -1) {
         state.splice(index, 1, action.payload as Post);
@@ -50,6 +51,7 @@ const counterSlice = createSlice({
 });
 
 export const { add, update, remove } = myTodoSlice.actions;
+export const { addBookmark, updateBookmark, removeBookmark } = myBookmarkSlice.actions;
 export const { increment, decrement, reset } = counterSlice.actions;
 
 const store = configureStore({

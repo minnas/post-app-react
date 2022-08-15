@@ -7,15 +7,16 @@ import Button from "../tools/Button";
 import Tooltip from "../tools/Tooltip";
 import { ButtonDefaults, ButtonOptions, ButtonType, TooltipType } from "../tools/settings";
 import { ViewProps } from "../types/view";
-import  { increment, decrement, reset } from "../../store/store";
+import  { increment, decrement, reset, RootState } from "../../store/store";
 import { useDispatch, useSelector } from "react-redux";
+import Accordion from "../tools/Accordion";
+import img from "./../../assets/birds.png";
 
 import './home.scss';
 
 const Home: React.FC<ViewProps> = ({ 
   }) => {
-    //@ts-ignore    
-    const count = useSelector((state) => state.count);
+    const count = useSelector((state:RootState) => state.count);
     const dispatch = useDispatch();
     /**counter */
     const clickPlus: MouseEventHandler = (event) => {
@@ -84,6 +85,9 @@ const Home: React.FC<ViewProps> = ({
                   <Button onClick={clickReset} icon={faRefresh} type={ButtonType.ICON_ONLY} options={cBtnOptions}/>
                 </div>
               </div>
+            </div>
+            <div className="awesome-image">
+              <Accordion label="Some birds flying" content={<img src={img} alt="birds"/>}/>
             </div>
             <div className="footer">
               <NavLink className="footer-link todo-link" to="/todos">

@@ -11,7 +11,8 @@ interface Props {
   type?: ButtonType,
   options?: ButtonOptions,
   id?: string,
-  disabled?: boolean
+  disabled?: boolean,
+  btnClass?: string
 }
 
 const Button: React.FC<Props> = ({ 
@@ -21,10 +22,11 @@ const Button: React.FC<Props> = ({
     type,
     options,
     id,
-    disabled
+    disabled,
+    btnClass
   }) => {
 
-  const className = "tools-button" as string; 
+  const className = "tools-button" + (btnClass ? " " + btnClass : "") as string; 
 
   const styles = {
     container: {
