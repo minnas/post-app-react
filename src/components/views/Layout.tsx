@@ -1,4 +1,6 @@
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { faChevronCircleLeft, faChevronCircleRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MouseEventHandler, ReactNode, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Button from "../tools/Button";
@@ -6,7 +8,7 @@ import { ButtonOptions, ButtonType } from "../tools/settings";
 import { pages } from "../types/pages";
 import "./layout.scss";
 
-const Layout = ({ children }: { children: ReactNode }) => {
+const Layout = ({ children, icon, showSignature }: { children: ReactNode, icon: IconProp, showSignature?:boolean }) => {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -29,11 +31,17 @@ const Layout = ({ children }: { children: ReactNode }) => {
     }
   };  
 
-
   useEffect(() => {
     const path = pages[page];
     navigate(path);
   }, [page]);
+
+  /*useEffect(() => {
+    const cPage = pages.findIndex(p => p == location.pathname);
+    if(cPage != page ) {
+
+    }
+  }, [location.pathname]);*/
 
   const options = {
     color: "rgba(255, 255, 255, .8)"
@@ -43,7 +51,15 @@ const Layout = ({ children }: { children: ReactNode }) => {
     <div>
       <Button btnClass="nav-button go-prev" onClick={prevClick} icon={faChevronCircleLeft} type={ButtonType.ICON_ONLY} options={options}/>
       <Button btnClass="nav-button go-next" onClick={nextClick} icon={faChevronCircleRight} type={ButtonType.ICON_ONLY} options={options}/>
-      {children}
+      <div>
+        <div className="content">
+          <span className="view-icon"><FontAwesomeIcon icon={icon} size="lg"/></span>
+          <div className="content-inner">
+            {children}
+          </div>
+          {showSignature ? <span className="some-test">Minna.</span> : ''}
+        </div>
+      </div>      
     </div>
   );
 };

@@ -33,46 +33,40 @@ const Tools = () => {
   const tooltip = "Some miscellaneous tools";
 
   return (
-    <div>
-      <div className="content">
-      <span className="home-cloud-sun"><FontAwesomeIcon icon={faCloudMoonRain} size="lg"/></span>
-        <div className="content-inner">
-          <h1>Some Awesome Tools. <FontAwesomeIcon icon={faHammer} size="lg"/></h1>
-          <div className="about-info">
-            <span>About</span>
-            <Tooltip type={TooltipType.RIGHT} label={<FontAwesomeIcon icon={faInfo} size="lg"/>} content={tooltip}></Tooltip>
+    <>
+      <h1>Some Awesome Tools. <FontAwesomeIcon icon={faHammer} size="lg"/></h1>
+      <div className="about-info">
+        <span>About</span>
+        <Tooltip type={TooltipType.RIGHT} label={<FontAwesomeIcon icon={faInfo} size="lg"/>} content={tooltip}></Tooltip>
+      </div>
+      <div className="awesome-counter">
+        <div className="awesome-counter-inner">
+          <h2>Some Awesome Counter.</h2>
+          <div className="counter-block">
+            <Button onClick={clickMinus} icon={faMinusSquare} type={ButtonType.ICON_ONLY} options={cBtnOptions}/>
+            <span className="current-value">{count}</span>
+            <Button onClick={clickPlus} icon={faPlusSquare} type={ButtonType.ICON_ONLY} options={cBtnOptions}/>
           </div>
-          <div className="awesome-counter">
-            <div className="awesome-counter-inner">
-              <h2>Some Awesome Counter.</h2>
-              <div className="counter-block">
-                <Button onClick={clickMinus} icon={faMinusSquare} type={ButtonType.ICON_ONLY} options={cBtnOptions}/>
-                <span className="current-value">{count}</span>
-                <Button onClick={clickPlus} icon={faPlusSquare} type={ButtonType.ICON_ONLY} options={cBtnOptions}/>
-              </div>
-              <div className="counter-block">
-                <span className="counter-reset-label">Reset</span>
-                <Button onClick={clickReset} icon={faRefresh} type={ButtonType.ICON_ONLY} options={cBtnOptions}/>
-              </div>
-            </div>
-          </div>
-          <div className="awesome-image">
-            <Accordion label="Some birds flying" content={<img src={img} alt="birds"/>}/>
-          </div>
-          <div className="footer">
-            <NavLink className="footer-link todo-link" to="/my-todos">
-                <FontAwesomeIcon icon={faNoteSticky} size="lg"/>
-                  Back to My Todos
-            </NavLink>
-            <NavLink className="footer-link todo-link" to="/">
-              <FontAwesomeIcon icon={faHome} size="lg"/>
-                Goto Home
-            </NavLink>
+          <div className="counter-block">
+            <span className="counter-reset-label">Reset</span>
+            <Button onClick={clickReset} icon={faRefresh} type={ButtonType.ICON_ONLY} options={cBtnOptions}/>
           </div>
         </div>
-        <span className="some-test">Minna.</span>
       </div>
-    </div>
+      <div className="awesome-image">
+        <Accordion label="Some birds flying" content={<img src={img} alt="birds"/>}/>
+      </div>
+      <div className="footer">
+        <NavLink className="footer-link todo-link" to="/my-todos">
+            <FontAwesomeIcon icon={faNoteSticky} size="lg"/>
+              Back to My Todos
+        </NavLink>
+        <NavLink className="footer-link todo-link" to="/">
+          <FontAwesomeIcon icon={faHome} size="lg"/>
+            Goto Home
+        </NavLink>
+      </div>
+    </>
   );
 }
 

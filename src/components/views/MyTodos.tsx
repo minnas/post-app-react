@@ -1,6 +1,6 @@
-import { faHome, faLayerGroup, faCheck, faCheckCircle, faTimes, faSnowman, faNoteSticky, faInfo } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faLayerGroup, faCheck, faCheckCircle, faTimes, faNoteSticky, faInfo } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { FormEvent, MouseEventHandler, useEffect, useState } from "react";
+import { FormEvent, MouseEventHandler, useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { add, update, remove, RootState } from './../../store/store';
 import { NavLink } from "react-router-dom";
@@ -58,54 +58,48 @@ const MyTodos = () => {
 
     const tooltip = "Add todo also from last page";  
     return (
-      <div>
-        <div className="content">
-          <span className="todos-show-flake"><FontAwesomeIcon icon={faSnowman} size="lg"/></span>
-          <div className="content-inner">
-            <div className="todos-toolbar">
-              <h1>My Own Todos</h1>
-              <FontAwesomeIcon icon={faLayerGroup} size="lg"/>
-              <Tooltip options={tooltipOptions} type={TooltipType.LEFT} label={<FontAwesomeIcon icon={faInfo} size="lg"/>} content={tooltip}></Tooltip>
-            </div>
-            <h3 className="todo-list-header">Current {count} todos in the list</h3>
-            <div className="todo-input-area">
-              <form onSubmit={addTodo}>
-              <label htmlFor="todoTitle">Add new Todo and save it by pressing Enter</label>
-                <input name="todoTitle" type="text"/>
-              </form>
-            </div>
-            <div className="awesome-todo-list">
-            {
-              todos.map((todo:MyTodo) => (
-                <div className="todo-item-container" key={todos.indexOf(todo).toString()}>
-                  <div className="todo-item-content-inner">
-                    <div className="todo-number">{todos.indexOf(todo).toString()}</div>
-                    <div className="todo-title">
-                      { todo.title }
-                    </div>
-                  </div>  
-                  <div className="todo-title completed">
-                    { todo.completed  ? <FontAwesomeIcon icon={faCheck}/> : <Button id={todo.id as string} type={ButtonType.ICON_ONLY} options={btnOptions} icon={faCheckCircle} onClick={setTodoDone}/> }
-                      <Button id={todo.id as string} type={ButtonType.ICON_ONLY} options={btnOptions} icon={faTimes} onClick={removeTodo}/>
-                  </div>
-                </div>
-              ))
-            }
-            </div>
-            <div className="footer todos-footer">
-              <NavLink className="footer-link home-link" to="/todos">
-                <FontAwesomeIcon icon={faNoteSticky} size="lg"/>
-                  Back to Todos
-              </NavLink>
-              <NavLink className="footer-link home-link" to="/tools">
-                <FontAwesomeIcon icon={faHome} size="lg"/>
-                  Goto to Tools
-              </NavLink>
-            </div>
-          </div>
+      <>
+        <div className="todos-toolbar">
+          <h1>My Own Todos</h1>
+          <FontAwesomeIcon icon={faLayerGroup} size="lg"/>
+          <Tooltip options={tooltipOptions} type={TooltipType.LEFT} label={<FontAwesomeIcon icon={faInfo} size="lg"/>} content={tooltip}></Tooltip>
         </div>
-
-      </div>
+        <h3 className="todo-list-header">Current {count} todos in the list</h3>
+        <div className="todo-input-area">
+          <form onSubmit={addTodo}>
+          <label htmlFor="todoTitle">Add new Todo and save it by pressing Enter</label>
+            <input name="todoTitle" type="text"/>
+          </form>
+        </div>
+        <div className="awesome-todo-list">
+        {
+          todos.map((todo:MyTodo) => (
+            <div className="todo-item-container" key={todos.indexOf(todo).toString()}>
+              <div className="todo-item-content-inner">
+                <div className="todo-number">{todos.indexOf(todo).toString()}</div>
+                <div className="todo-title">
+                  { todo.title }
+                </div>
+              </div>  
+              <div className="todo-title completed">
+                { todo.completed  ? <FontAwesomeIcon icon={faCheck}/> : <Button id={todo.id as string} type={ButtonType.ICON_ONLY} options={btnOptions} icon={faCheckCircle} onClick={setTodoDone}/> }
+                  <Button id={todo.id as string} type={ButtonType.ICON_ONLY} options={btnOptions} icon={faTimes} onClick={removeTodo}/>
+              </div>
+            </div>
+          ))
+        }
+        </div>
+        <div className="footer todos-footer">
+          <NavLink className="footer-link home-link" to="/todos">
+            <FontAwesomeIcon icon={faNoteSticky} size="lg"/>
+              Back to Todos
+          </NavLink>
+          <NavLink className="footer-link home-link" to="/tools">
+            <FontAwesomeIcon icon={faHome} size="lg"/>
+              Goto to Tools
+          </NavLink>
+        </div>
+      </>
     );
 }
 

@@ -1,6 +1,6 @@
-import { faBookAtlas, faHome, faCheck, faTimes, faSnowflake, faLayerGroup, faPlusCircle, faLightbulb } from "@fortawesome/free-solid-svg-icons";
+import { faBookAtlas, faHome, faCheck, faTimes, faLayerGroup, faPlusCircle, faLightbulb } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { MouseEventHandler, useEffect, useState } from "react";
+import { MouseEventHandler, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { ApiType, search } from "../../api/api";
 import Spinner from "../tools/Spinner";
@@ -64,50 +64,45 @@ const Todos = () => {
     const tooltip = "You can copy todo to own Todos by clicking plus button";  
 
     return (
-      <div>
-        <div className="content">
-          <span className="todos-show-flake"><FontAwesomeIcon icon={faSnowflake} size="lg"/></span>
-          <div className="content-inner">
-            <div className="todos-toolbar">
-              <h1>Some Awesome Todos.</h1>
-              <FontAwesomeIcon icon={faBookAtlas} size="lg"/>
+      <>
+        <div className="todos-toolbar">
+        <h1>Some Awesome Todos.</h1>
+        <FontAwesomeIcon icon={faBookAtlas} size="lg"/>
+      </div>
+      <div className="todo-list-header-container">
+        <h3 className="todo-list-header">Current {count} todos in the list</h3>
+        <Tooltip type={TooltipType.RIGHT} label={<FontAwesomeIcon icon={faLightbulb} size="lg"/>} content={tooltip}></Tooltip>
+      </div>
+      {
+        toastVisible ? <Toast content="Todo copied to my todos"/> : ''
+      }
+      <div className="awesome-todo-list">
+      {
+        loading ? <div className="todo-item-container todos-loading"><Spinner/></div> : todos.map((todo:Todo) => (
+          <div className="todo-item-container" key={todos.indexOf(todo).toString()}>
+            <div className="todo-number">{todos.indexOf(todo).toString()}</div>
+            <div className="todo-title">
+              { todo.title }
             </div>
-            <div className="todo-list-header-container">
-              <h3 className="todo-list-header">Current {count} todos in the list</h3>
-              <Tooltip type={TooltipType.RIGHT} label={<FontAwesomeIcon icon={faLightbulb} size="lg"/>} content={tooltip}></Tooltip>
-            </div>
-            {
-              toastVisible ? <Toast content="Todo copied to my todos"/> : ''
-            }
-            <div className="awesome-todo-list">
-            {
-              loading ? <div className="todo-item-container todos-loading"><Spinner/></div> : todos.map((todo:Todo) => (
-                <div className="todo-item-container" key={todos.indexOf(todo).toString()}>
-                  <div className="todo-number">{todos.indexOf(todo).toString()}</div>
-                  <div className="todo-title">
-                    { todo.title }
-                  </div>
-                  <div className="todo-title completed">
-                    { todo.completed  ? <FontAwesomeIcon icon={faCheck}/> : <FontAwesomeIcon icon={faTimes}/>}
-                    <Button id={todo.id as string} icon={faPlusCircle} type={ButtonType.ICON_ONLY} label="copy" disabled={copyDisabled(todo.id as string)} onClick={copyToMyTodos} options={btnOptions}/>
-                  </div>
-                </div>
-              ))
-            }
-            </div>
-            <div className="footer todos-footer">
-              <NavLink className="footer-link home-link" to="/">
-                <FontAwesomeIcon icon={faHome} size="lg"/>
-                  Back to Home
-              </NavLink>
-              <NavLink className="footer-link home-link" to="/my-todos">
-                <FontAwesomeIcon icon={faLayerGroup} size="lg"/>
-                  My Todos
-              </NavLink>
+            <div className="todo-title completed">
+              { todo.completed  ? <FontAwesomeIcon icon={faCheck}/> : <FontAwesomeIcon icon={faTimes}/>}
+              <Button id={todo.id as string} icon={faPlusCircle} type={ButtonType.ICON_ONLY} label="copy" disabled={copyDisabled(todo.id as string)} onClick={copyToMyTodos} options={btnOptions}/>
             </div>
           </div>
-        </div>
+        ))
+      }
       </div>
+      <div className="footer todos-footer">
+        <NavLink className="footer-link home-link" to="/">
+          <FontAwesomeIcon icon={faHome} size="lg"/>
+            Back to Home
+        </NavLink>
+        <NavLink className="footer-link home-link" to="/my-todos">
+          <FontAwesomeIcon icon={faLayerGroup} size="lg"/>
+            My Todos
+        </NavLink>
+      </div>
+    </>
     );
 }
 
