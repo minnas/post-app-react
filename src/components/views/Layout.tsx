@@ -34,14 +34,16 @@ const Layout = ({ children, icon, showSignature }: { children: ReactNode, icon: 
   useEffect(() => {
     const path = pages[page];
     navigate(path);
+    console.log("watch page");
   }, [page]);
 
-  /*useEffect(() => {
+  useEffect(() => {
     const cPage = pages.findIndex(p => p == location.pathname);
     if(cPage != page ) {
-
+      setPage(cPage);
     }
-  }, [location.pathname]);*/
+    console.log("watch path");
+  }, [location.pathname]);
 
   const options = {
     color: "rgba(255, 255, 255, .8)"
