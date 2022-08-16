@@ -34,7 +34,6 @@ const Layout = ({ children, icon, showSignature }: { children: ReactNode, icon: 
   useEffect(() => {
     const path = pages[page];
     navigate(path);
-    console.log("watch page");
   }, [page]);
 
   useEffect(() => {
@@ -42,7 +41,6 @@ const Layout = ({ children, icon, showSignature }: { children: ReactNode, icon: 
     if(cPage != page ) {
       setPage(cPage);
     }
-    console.log("watch path");
   }, [location.pathname]);
 
   const options = {
