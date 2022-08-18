@@ -41,6 +41,7 @@ span.some-test {
   &:hover {
     transform: rotate(15deg);
   }
+  cursor: default;
 }
 .view-icon {
   position: fixed;
