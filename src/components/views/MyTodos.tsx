@@ -1,4 +1,4 @@
-import { faHome, faLayerGroup, faCheck, faCheckCircle, faTimes, faNoteSticky, faInfo } from "@fortawesome/free-solid-svg-icons";
+import { faLayerGroup, faCheck, faCheckCircle, faTimes, faNoteSticky, faInfo, faTools } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FormEvent, MouseEventHandler, useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
@@ -95,7 +95,7 @@ const MyTodos = () => {
               Back to Todos
           </NavLink>
           <NavLink className="footer-link home-link" to="/tools">
-            <FontAwesomeIcon icon={faHome} size="lg"/>
+            <FontAwesomeIcon icon={faTools} size="lg"/>
               Goto to Tools
           </NavLink>
         </div>

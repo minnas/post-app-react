@@ -48,7 +48,7 @@ const Todos = () => {
         setToastVisible(true);  
         setTimeout(() => {
           setToastVisible(false); 
-        }, 400);
+        }, 500);
       }
     };  
 
