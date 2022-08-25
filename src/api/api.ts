@@ -6,16 +6,11 @@ export const search = async (type?: ApiType) => {
   if (type && type == ApiType.TODOS) {
     prefix = "todos";
   }
-  try {
-    const response = await fetch(`${randomApi}/${prefix}`, {
-      headers: { "Access-Control-Allow-Origin": "*" },
-      method: "GET",
-    });
-    return response.json();
-  } catch (e) {
-    console.log("Failed to fetch data");
-    return;
-  }
+  const response = await fetch(`${randomApi}/${prefix}`, {
+    headers: { "Access-Control-Allow-Origin": "*" },
+    method: "GET",
+  });
+  return response.json();
 };
 
 export enum ApiType {

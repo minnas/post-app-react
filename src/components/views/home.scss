@@ -1,6 +1,9 @@
+/*colors*/
+$footer-color: rgba(0, 0, 0, 0.9);
+
 .footer {
   font-size: 2rem;
-  color: rgba(0, 0, 0, 0.9);
+  color: $footer-color;
   text-decoration: none;
   margin-top: 2rem;
   font-weight: bold;

@@ -1,3 +1,9 @@
+/*colors*/
+$content-inner-bgcolor: rgba(255, 255, 255, 0.3);
+$nav-button-color: #fff;
+$nav-button-color-hover: rgba(255, 255, 255, 0.3);
+$view-icon-color: rgba(255, 255, 255, 0.8);
+
 .content {
   display: flex;
   justify-content: center;
@@ -17,7 +23,7 @@
   width: 80%;
   max-width: 80rem;
   padding: 3rem 6rem;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: $content-inner-bgcolor;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   border-radius: 8px;
@@ -32,7 +38,7 @@ span.some-test {
   display: block;
   transform: rotate(-15deg);
   z-index: 999;
-  color: #fff;
+  color: $nav-button-color;
   font-family: "Times New Roman", Times, serif;
   font-style: italic;
   text-decoration: underline;
@@ -47,7 +53,7 @@ span.some-test {
   position: fixed;
   top: 4rem;
   right: 4rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: $view-icon-color;
   font-size: 5rem;
   z-index: 10;
 }
@@ -57,10 +63,10 @@ span.some-test {
   top: 50%;
   z-index: 99;
   font-size: 4rem;
-  color: #fff;
+  color: $nav-button-color;
   &:hover {
-    filter: drop-shadow(0, 0, 5rem, #fff);
-    color: rgba(255, 255, 255, 0.3) !important;
+    filter: drop-shadow(0, 0, 5rem, $nav-button-color);
+    color: $nav-button-color-hover !important;
     cursor: pointer;
   }
   &[disabled]:cursor {

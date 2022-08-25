@@ -32,6 +32,7 @@ const Todos = () => {
   const [count, setCount] = useState(0);
   const [loading, setLoading] = useState(false);
   const [toastVisible, setToastVisible] = useState(false);
+  const [toastErrorVisible, setToastErrorVisible] = useState(false);
   const dispatch = useDispatch();
   const myTodos = useSelector((state: RootState) => state.todos);
 
@@ -42,6 +43,14 @@ const Todos = () => {
         setTodos(items as Todo[]);
         setCount(items.length);
         setLoading(false);
+      })
+      .catch((e) => {
+        console.log("Error while fetching todos, cause " + e);
+        setLoading(false);
+        setToastErrorVisible(true);
+        setTimeout(() => {
+          setToastErrorVisible(false);
+        }, 1500);
       })
       .finally(() => {
         setLoading(false);
@@ -95,6 +104,7 @@ const Todos = () => {
         ></Tooltip>
       </div>
       {toastVisible ? <Toast content="Todo copied to my todos" /> : ""}
+      {toastErrorVisible ? <Toast content="Could now fetch todos" type={ToastType.ERROR}/> : ""}
       <div className="awesome-todo-list">
         {loading ? (
           <div className="todo-item-container todos-loading">
