@@ -2,31 +2,31 @@ import React, { MouseEventHandler } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { ButtonType, ButtonDefaults, ButtonOptions } from "./settings";
-import './button.scss';
+import "./button.scss";
 
 interface Props {
   label?: string;
   onClick: MouseEventHandler<HTMLButtonElement>;
-  icon?: IconProp
-  type?: ButtonType,
-  options?: ButtonOptions,
-  id?: string,
-  disabled?: boolean,
-  btnClass?: string
+  icon?: IconProp;
+  type?: ButtonType;
+  options?: ButtonOptions;
+  id?: string;
+  disabled?: boolean;
+  btnClass?: string;
 }
 
-const Button: React.FC<Props> = ({ 
-    label,
-    onClick, 
-    icon,
-    type,
-    options,
-    id,
-    disabled,
-    btnClass
-  }) => {
-
-  const className = "tools-button" + (btnClass ? " " + btnClass : "") as string; 
+const Button: React.FC<Props> = ({
+  label,
+  onClick,
+  icon,
+  type,
+  options,
+  id,
+  disabled,
+  btnClass,
+}) => {
+  const className = ("tools-button" +
+    (btnClass ? " " + btnClass : "")) as string;
 
   const styles = {
     container: {
@@ -36,21 +36,21 @@ const Button: React.FC<Props> = ({
       padding: options?.padding || ButtonDefaults.PADDING,
       border: options?.border || ButtonDefaults.BORDER,
     } as React.CSSProperties,
-  };  
+  };
   const onlyIcon = type == ButtonType.ICON_ONLY;
 
   return (
-    <button 
+    <button
       onClick={onClick}
       className={className}
       style={styles.container}
       id={id}
       disabled={disabled}
     >
-    { icon ? <FontAwesomeIcon icon={icon} size="lg"/> : '' }
-    { onlyIcon ? '' : <span>{label}</span> }
+      {icon ? <FontAwesomeIcon icon={icon} size="lg" /> : ""}
+      {onlyIcon ? "" : <span>{label}</span>}
     </button>
   );
-}
+};
 
 export default Button;

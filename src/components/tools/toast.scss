@@ -1,13 +1,13 @@
 .toast-container {
-  position: relative;  
+  position: relative;
 }
 .toast-container-inner {
   transition: all 0.15s ease;
   min-width: 10rem;
-  background-color: rgba(147, 97, 90, .6);
+  background-color: rgba(147, 97, 90, 0.6);
   color: #000;
-  border-radius: .25rem;
-  filter: drop-shadow(0 0 5rem #93615a);  
+  border-radius: 0.25rem;
+  filter: drop-shadow(0 0 5rem #93615a);
   padding: 1rem 1.5rem;
   position: absolute;
   transform: translate(0, -50%);
@@ -18,7 +18,7 @@
   border-left-width: 1rem;
   font-size: 1.5rem;
   font-weight: 600;
-  
+
   & .toas-content {
     display: flex;
     justify-content: flex-start;
@@ -26,7 +26,7 @@
     grid-column-gap: 1rem;
     & .fa {
       font-size: 2rem;
-      opacity: .9;
+      opacity: 0.9;
     }
   }
 }

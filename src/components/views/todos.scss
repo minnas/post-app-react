@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   grid-row-gap: 1rem;
-  overflow: scroll;  
+  overflow: scroll;
   max-height: 60%;
   height: auto;
 }
@@ -27,7 +27,7 @@ h3.todo-list-header {
 .todos-toolbar {
   display: flex;
   justify-content: center;
-  align-content: space-between;  
+  align-content: space-between;
   & svg {
     font-size: 3rem;
     margin-left: 1rem;
@@ -36,7 +36,7 @@ h3.todo-list-header {
 }
 .todo-number {
   font-weight: 900;
-  padding-bottom: 1rem;  
+  padding-bottom: 1rem;
 }
 .todo-title {
   line-height: 2rem;
@@ -53,7 +53,7 @@ h3.todo-list-header {
       &:hover {
         color: red;
       }
-    } 
+    }
     & .fa-check {
       &:hover {
         color: green;
@@ -62,13 +62,13 @@ h3.todo-list-header {
     & button:hover {
       & .fa-xmark {
         color: red;
-      } 
+      }
       & .fa-circle-check {
         color: green;
       }
     }
     & button[disabled] {
-      opacity:0.5;
+      opacity: 0.5;
     }
   }
   &.copy-btn {
@@ -78,7 +78,7 @@ h3.todo-list-header {
     & button {
       font-size: 2rem;
       &[disabled] {
-        opacity:0.5;
+        opacity: 0.5;
       }
     }
   }
@@ -99,11 +99,11 @@ h3.todo-list-header {
   & .tooltip-container {
     align-self: flex-start;
     & svg {
-      transform: all .25s ease;
+      transform: all 0.25s ease;
       font-size: 2rem;
       &:hover {
-        color: drop-shadow(0,0, 2rem, #FFFF8A);
-        color: #FFFF00;
+        color: drop-shadow(0, 0, 2rem, #ffff8a);
+        color: #ffff00;
         opacity: 0.9;
         cursor: pointer;
       }
