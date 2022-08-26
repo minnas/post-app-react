@@ -11,13 +11,10 @@ export const search = async (type?: ApiType) => {
     method: "GET",
   })
     .then((res) => {
-      if (!res.ok) {
-        throw new Error(`Could not fetch ${prefix}`);
-      }
       return res.json();
     })
     .catch((e) => {
-      throw new Error(`Failed to connect to api`);
+      throw new Error(`Failed to fetch ${prefix} from api`);
     });
 };
 
