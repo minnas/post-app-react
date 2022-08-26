@@ -14,9 +14,11 @@ interface Props {
 const Toast: React.FC<Props> = ({ content, type }) => {
   const icon =
     type && type == ToastType.ERROR ? faExclamationTriangle : faCheck;
+  const toastTypeClass = type && type == ToastType.ERROR ? "error" : "success";
+  const toasClassName = `toast-container ${toastTypeClass}`;
 
   return (
-    <div className="toast-container">
+    <div className={toasClassName}>
       <div className="toast-container-inner">
         <div className="toas-content">
           <FontAwesomeIcon className="toas-mgs-icon" icon={icon} size="lg" />
