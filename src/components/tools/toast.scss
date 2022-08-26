@@ -1,24 +1,29 @@
+$toast-bg-color: rgba(147, 97, 90, 0.6);
+$toast-error-bg-color: rgba(147, 97, 90, 1);
+
 .toast-container {
-  position: relative;
+  position: fixed;
+  left: 35%;
+  z-index: 10;
+  &.error {
+    .toast-container-inner {
+      background-color: $toast-error-bg-color;
+    }
+  }
 }
 .toast-container-inner {
   transition: all 0.15s ease;
   min-width: 10rem;
-  background-color: rgba(147, 97, 90, 0.6);
+  background-color: $toast-bg-color;
   color: #000;
   border-radius: 0.25rem;
   filter: drop-shadow(0 0 5rem #93615a);
   padding: 1rem 1.5rem;
-  position: absolute;
-  transform: translate(0, -50%);
-  top: 50%;
-  left: 50%;
   border: 1px solid #93615a;
-  z-index: 10;
   border-left-width: 1rem;
   font-size: 1.5rem;
   font-weight: 600;
-
+  min-width: 5rem;
   & .toas-content {
     display: flex;
     justify-content: flex-start;
