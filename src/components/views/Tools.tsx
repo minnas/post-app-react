@@ -18,8 +18,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Accordion from "../tools/Accordion";
 import img from "./../../assets/birds.png";
 
-import "./home.scss";
-import "./tools.scss";
+import "./styles/home.scss";
+import "./styles/tools.scss";
 
 const Tools = () => {
   const count = useSelector((state: RootState) => state.count);

@@ -19,8 +19,8 @@ import {
   ToastType,
 } from "../tools/settings";
 import Toast from "../tools/Toast";
-import "./home.scss";
-import "./posts.scss";
+import "./styles/home.scss";
+import "./styles/posts.scss";
 import { useDispatch, useSelector } from "react-redux";
 import Tooltip from "../tools/Tooltip";
 

@@ -1,5 +1,3 @@
-import { faDiagramSuccessor } from "@fortawesome/free-solid-svg-icons";
-
 export enum ButtonType {
   ICON_ONLY,
   DEFAULT,

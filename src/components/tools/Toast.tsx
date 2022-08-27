@@ -4,7 +4,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ToastType } from "./settings";
-import "./toast.scss";
+import "./styles/toast.scss";
 
 interface Props {
   content?: React.ReactNode;

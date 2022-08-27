@@ -13,7 +13,7 @@ import { NavLink } from "react-router-dom";
 import Button from "../tools/Button";
 import Tooltip from "../tools/Tooltip";
 import { ButtonDefaults, ButtonType, TooltipType } from "../tools/settings";
-import "./home.scss";
+import "./styles/home.scss";
 
 const Home = () => {
   /**awesome buttons */

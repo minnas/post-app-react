@@ -9,7 +9,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Button from "../tools/Button";
 import { ButtonOptions, ButtonType } from "../tools/settings";
 import { pages } from "../types/pages";
-import "./layout.scss";
+import "./styles/layout.scss";
 
 const Layout = ({
   children,

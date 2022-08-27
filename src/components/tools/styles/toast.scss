@@ -1,6 +1,4 @@
-$toast-bg-color: rgba(147, 97, 90, 0.6);
-$toast-error-bg-color: rgba(147, 97, 90, 1);
-
+@import "./../../styles/variables";
 .toast-container {
   position: fixed;
   left: 35%;
@@ -16,12 +14,12 @@ $toast-error-bg-color: rgba(147, 97, 90, 1);
 .toast-container-inner {
   transition: all 0.15s ease;
   min-width: 10rem;
-  background-color: $toast-bg-color;
+  background-color: $color-light-coral-opacity;
   color: #000;
   border-radius: 0.25rem;
-  filter: drop-shadow(0 0 5rem #93615a);
+  filter: drop-shadow(0 0 5rem $info-block-color);
   padding: 1rem 1.5rem;
-  border: 1px solid #93615a;
+  border: 1px solid $info-block-color;
   border-left-width: 1rem;
   font-size: 1.5rem;
   font-weight: 600;

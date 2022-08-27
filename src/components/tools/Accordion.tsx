@@ -1,7 +1,7 @@
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MouseEventHandler, useState } from "react";
-import "./accordion.scss";
+import "./styles/accordion.scss";
 
 interface Props {
   content?: React.ReactNode;

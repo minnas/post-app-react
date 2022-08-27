@@ -2,7 +2,7 @@ import React, { MouseEventHandler } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { ButtonType, ButtonDefaults, ButtonOptions } from "./settings";
-import "./button.scss";
+import "./styles/button.scss";
 
 interface Props {
   label?: string;

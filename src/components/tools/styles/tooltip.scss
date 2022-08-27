@@ -1,24 +1,25 @@
+@import "./../../styles/variables";
 .tooltip {
   transition: all 0.15s ease;
   min-width: 10rem;
-  background-color: rgba(147, 97, 90, 0.6);
+  background-color: $color-light-coral-opacity;
   color: #000;
   text-align: center;
   border-radius: 0.5rem;
-  filter: drop-shadow(0 0 5rem #93615a);
+  filter: drop-shadow(0 0 5rem $info-block-color);
 
   padding: 1rem 0.5rem;
   position: absolute;
   transform: translate(0, -50%);
   top: 50%;
   left: 50%;
-  border: 1px solid #93615a;
+  border: 1px solid $info-block-color;
   z-index: 10;
   font-family: "Open sans", sans-serif;
   font-size: 1.5rem;
   line-height: 1.8rem;
   &.fill-color-mode {
-    background-color: rgba(147, 97, 90, 1);
+    background-color: $color-light-coral;
   }
 }
 .tooltip.bottom::before {
@@ -29,7 +30,7 @@
   margin-top: -0.5rem;
   border-width: 0.5rem;
   border-style: solid;
-  border-color: transparent transparent #93615a transparent;
+  border-color: transparent transparent $info-block-color transparent;
   filter: drop-shadow(0 -1px 1px transparent);
 }
 .tooltip.right {
@@ -43,7 +44,7 @@
   margin-top: -0.5rem;
   border-width: 0.5rem;
   border-style: solid;
-  border-color: transparent #93615a transparent transparent;
+  border-color: transparent $info-block-color transparent transparent;
 }
 .tooltip.left {
   left: auto;

@@ -19,9 +19,9 @@ import {
   TooltipOptions,
 } from "../tools/settings";
 import { Bookmark } from "../types/types";
-import "./home.scss";
-import "./posts.scss";
-import "./bookmarks.scss";
+import "./styles/home.scss";
+import "./styles/posts.scss";
+import "./styles/bookmarks.scss";
 import Tooltip from "../tools/Tooltip";
 
 const Bookmarks = () => {

@@ -20,9 +20,9 @@ import {
   TooltipOptions,
 } from "../tools/settings";
 import { MyTodo } from "../types/types";
-import "./home.scss";
-import "./todos.scss";
-import "./mytodos.scss";
+import "./styles/home.scss";
+import "./styles/todos.scss";
+import "./styles/mytodos.scss";
 import Tooltip from "../tools/Tooltip";
 
 const MyTodos = () => {

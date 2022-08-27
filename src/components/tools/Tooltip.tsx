@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { TooltipOptions, TooltipType } from "./settings";
-import "./tooltip.scss";
+import "./styles/tooltip.scss";
 
 interface Props {
   label?: React.ReactNode;

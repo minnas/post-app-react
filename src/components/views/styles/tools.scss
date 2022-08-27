@@ -7,8 +7,8 @@
     grid-row-gap: 3rem;
     padding-top: 2rem;
     padding-bottom: 2rem;
-    filter: drop-shadow(0, 0, 5rem, #93615a);
-    border: 2px solid #93615a;
+    filter: drop-shadow(0, 0, 5rem, $info-block-color);
+    border: 2px solid $info-block-color;
     border-radius: 1rem;
     box-shadow: inset 20rem 20rem rgba(147, 97, 90, 0.4);
     & h2 {
