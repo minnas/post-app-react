@@ -9,6 +9,7 @@ import Tools from "./components/views/Tools";
 import Layout from "./components/views/Layout";
 import "./app.scss";
 import {
+  faBugs,
   faCloudMoonRain,
   faCloudSun,
   faSnowflake,
@@ -16,6 +17,7 @@ import {
   faStarAndCrescent,
 } from "@fortawesome/free-solid-svg-icons";
 import Posts from "./components/views/Posts";
+import Bookmarks from "./components/views/Bookmarks";
 
 const App = (): JSX.Element => {
   return (
@@ -53,6 +55,10 @@ const App = (): JSX.Element => {
           <Route
             path="/posts"
             element={<Layout children={<Posts />} icon={faStarAndCrescent} />}
+          />
+          <Route
+            path="/bookmarks"
+            element={<Layout children={<Bookmarks />} icon={faBugs} />}
           />
         </Routes>
       </Provider>

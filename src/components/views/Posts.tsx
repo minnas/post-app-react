@@ -3,7 +3,6 @@ import {
   faTools,
   faBookmark,
   faLightbulb,
-  faHome,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MouseEventHandler, useEffect, useState } from "react";
@@ -141,8 +140,8 @@ const Posts = () => {
           Back to Tools
         </NavLink>
         <NavLink className="footer-link post-link" to="/">
-          <FontAwesomeIcon icon={faHome} size="lg" />
-          Goto Home
+          <FontAwesomeIcon icon={faBookmark} size="lg" />
+          Goto Bookmarks
         </NavLink>
       </div>
     </>

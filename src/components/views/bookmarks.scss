@@ -1,0 +1,36 @@
+.post-item-container {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+.post-item-content-inner {
+  align-self: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  grid-column-gap: 2rem;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  height: 100%;
+}
+.posts-toolbar {
+  & .fa-info:hover {
+    cursor: pointer;
+  }
+}
+.bookmark-actions {
+  display: flex;
+  justify-content: flex-start;
+  grid-column-gap: 1rem;
+  align-items: center;
+  .fa-layers {
+    font-size: 3rem;
+    & .bookmark-bg {
+      color: rgba(147, 97, 90, 0.6);
+    }
+  }
+}
+
+h3.post-list-header {
+  text-align: center;
+}
