@@ -13,7 +13,9 @@ import {
   faCloudSun,
   faSnowflake,
   faSnowman,
+  faStarAndCrescent,
 } from "@fortawesome/free-solid-svg-icons";
+import Posts from "./components/views/Posts";
 
 const App = (): JSX.Element => {
   return (
@@ -47,6 +49,10 @@ const App = (): JSX.Element => {
                 showSignature={true}
               />
             }
+          />
+          <Route
+            path="/posts"
+            element={<Layout children={<Posts />} icon={faStarAndCrescent} />}
           />
         </Routes>
       </Provider>

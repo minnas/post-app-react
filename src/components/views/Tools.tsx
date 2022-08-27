@@ -1,12 +1,11 @@
 import {
   faHammer,
-  faCloudMoonRain,
   faPlusSquare,
   faMinusSquare,
   faRefresh,
   faInfo,
-  faHome,
   faNoteSticky,
+  faSignsPost,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MouseEventHandler } from "react";
@@ -94,9 +93,9 @@ const Tools = () => {
           <FontAwesomeIcon icon={faNoteSticky} size="lg" />
           Back to My Todos
         </NavLink>
-        <NavLink className="footer-link todo-link" to="/">
-          <FontAwesomeIcon icon={faHome} size="lg" />
-          Goto Home
+        <NavLink className="footer-link todo-link" to="/posts">
+          <FontAwesomeIcon icon={faSignsPost} size="lg" />
+          Goto posts
         </NavLink>
       </div>
     </>

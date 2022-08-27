@@ -43,7 +43,6 @@ const Todos = () => {
       .then((items) => {
         setTodos(items as Todo[]);
         setCount(items.length);
-        setLoading(false);
       })
       .catch((e: Error) => {
         setToastErrorMessage(e.message);
