@@ -48,7 +48,7 @@ const Bookmarks = () => {
     fillBgColorMode: true,
   } as TooltipOptions;
 
-  const tooltip = "Here are your bookmaked Posts";
+  const tooltip = "Here are your bookmarked Posts";
   return (
     <>
       <div className="posts-toolbar">
