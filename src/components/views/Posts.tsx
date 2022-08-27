@@ -64,7 +64,7 @@ const Posts = () => {
           postId: id,
           id: bookmarks.length,
           title: post.title,
-          body: post.body
+          body: post.body,
         } as Bookmark)
       );
       setToastVisible(true);
