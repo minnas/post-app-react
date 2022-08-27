@@ -13,7 +13,6 @@ import {
   faCloudSun,
   faSnowflake,
   faSnowman,
-  faPlaneDeparture,
   faStarAndCrescent
 } from "@fortawesome/free-solid-svg-icons";
 import Posts from "./components/views/Posts";
