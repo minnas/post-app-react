@@ -1,9 +1,8 @@
-/*colors*/
-$footer-color: rgba(0, 0, 0, 0.9);
+@import "./../../styles/variables";
 
 .footer {
   font-size: 2rem;
-  color: $footer-color;
+  color: $color-black-opacity;
   text-decoration: none;
   margin-top: 2rem;
   font-weight: bold;
@@ -30,7 +29,7 @@ $footer-color: rgba(0, 0, 0, 0.9);
   & span {
     font-weight: 600;
     font-style: italic;
-    color: rgba(0, 0, 0, 0.9);
+    color: $color-black-opacity;
     align-self: flex-end;
   }
   & .tooltip-container {

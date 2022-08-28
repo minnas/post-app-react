@@ -6,6 +6,7 @@ import {
   faTimes,
   faCircle,
 } from "@fortawesome/free-solid-svg-icons";
+import { faCircle as faCircleRing} from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MouseEventHandler, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -75,6 +76,11 @@ const Bookmarks = () => {
                   <FontAwesomeIcon
                     icon={faCircle}
                     className="bookmark-bg"
+                    size="lg"
+                  />
+                  <FontAwesomeIcon
+                    icon={faCircleRing}
+                    className="bookmark-border"
                     size="lg"
                   />
                   <FontAwesomeIcon icon={faBookmark} transform="shrink-6" />
