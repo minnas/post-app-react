@@ -6,7 +6,7 @@ import {
   faTimes,
   faCircle,
 } from "@fortawesome/free-solid-svg-icons";
-import { faCircle as faCircleRing} from "@fortawesome/free-regular-svg-icons";
+import { faCircle as faCircleRing } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MouseEventHandler, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
