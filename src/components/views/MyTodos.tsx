@@ -1,11 +1,11 @@
 import {
   faLayerGroup,
-  faCheck,
-  faCheckCircle,
   faTimes,
   faNoteSticky,
   faInfo,
   faTools,
+  faBug,
+  faBugSlash,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FormEvent, MouseEventHandler, useEffect, useState } from "react";
@@ -30,15 +30,16 @@ const MyTodos = () => {
   const dispatch = useDispatch();
   const [count, setCount] = useState(0);
 
-  const completeTodo = (id: number) => {
-    const title = (todos.find((t: MyTodo) => t.id == id) as MyTodo)?.title;
-    const completed = true;
-    dispatch(update({ id, title, completed }));
+  const toggleTodo = (id: number) => {
+    const todo = todos.find((t: MyTodo) => t.id == id) as MyTodo;
+    const clone = { ...todo };
+    clone.completed = !todo.completed;
+    dispatch(update(clone));
   };
 
-  const setTodoDone: MouseEventHandler = (event) => {
+  const setToggleTodoStatus: MouseEventHandler = (event) => {
     const btn = event.currentTarget as HTMLButtonElement;
-    completeTodo(Number.parseInt(btn.id));
+    toggleTodo(Number.parseInt(btn.id));
     return false;
   };
 
@@ -105,14 +106,20 @@ const MyTodos = () => {
             </div>
             <div className="todo-title completed">
               {todo.completed ? (
-                <FontAwesomeIcon icon={faCheck} />
+                <Button
+                  id={todo.id as string}
+                  type={ButtonType.ICON_ONLY}
+                  options={btnOptions}
+                  icon={faBugSlash}
+                  onClick={setToggleTodoStatus}
+                />
               ) : (
                 <Button
                   id={todo.id as string}
                   type={ButtonType.ICON_ONLY}
                   options={btnOptions}
-                  icon={faCheckCircle}
-                  onClick={setTodoDone}
+                  icon={faBug}
+                  onClick={setToggleTodoStatus}
                 />
               )}
               <Button

@@ -52,20 +52,20 @@ h3.todo-list-header {
     & .fa-xmark {
       min-width: 2rem;
       &:hover {
-        color: red;
+        color: $color-error;
       }
     }
     & .fa-check {
       &:hover {
-        color: green;
+        color: $color-success;
       }
     }
     & button:hover {
       & .fa-xmark {
-        color: red;
+        color: $color-error;
       }
       & .fa-circle-check {
-        color: green;
+        color: $color-success;
       }
     }
     & button[disabled] {
