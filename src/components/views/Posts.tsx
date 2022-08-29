@@ -139,7 +139,7 @@ const Posts = () => {
           <FontAwesomeIcon icon={faTools} size="lg" />
           Back to Tools
         </NavLink>
-        <NavLink className="footer-link post-link" to="/">
+        <NavLink className="footer-link post-link" to="/bookmarks">
           <FontAwesomeIcon icon={faBookmark} size="lg" />
           Goto Bookmarks
         </NavLink>

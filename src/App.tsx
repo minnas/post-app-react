@@ -14,7 +14,7 @@ import {
   faCloudSun,
   faSnowflake,
   faSnowman,
-  faStarAndCrescent,
+  faMosquito
 } from "@fortawesome/free-solid-svg-icons";
 import Posts from "./components/views/Posts";
 import Bookmarks from "./components/views/Bookmarks";
@@ -54,7 +54,7 @@ const App = (): JSX.Element => {
           />
           <Route
             path="/posts"
-            element={<Layout children={<Posts />} icon={faStarAndCrescent} />}
+            element={<Layout children={<Posts />} icon={faMosquito} />}
           />
           <Route
             path="/bookmarks"

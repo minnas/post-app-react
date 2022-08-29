@@ -5,12 +5,13 @@ import {
   faHome,
   faTimes,
   faCircle,
+  faCheckCircle
 } from "@fortawesome/free-solid-svg-icons";
 import { faCircle as faCircleRing } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MouseEventHandler, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { removeBookmark, RootState } from "./../../store/store";
+import { removeBookmark, updateBookmark, RootState } from "./../../store/store";
 import { NavLink } from "react-router-dom";
 import Button from "../tools/Button";
 import {
@@ -32,8 +33,17 @@ const Bookmarks = () => {
 
   const removeFromBookmarks: MouseEventHandler = (event) => {
     const btn = event.currentTarget as HTMLButtonElement;
-    const id = btn.id;
+    const id = btn.getAttribute("data-bookmark");
     dispatch(removeBookmark({ id }));
+  };
+
+  const toggleImportant: MouseEventHandler = (event) => {
+    const btn = event.currentTarget as HTMLButtonElement;
+    const id = btn.getAttribute("data-bookmark");
+    const bookmark = bookmarks.find(b => b.id as string == id);
+    const clone = {...bookmark};
+    clone.important = bookmark?.important ? false : true;
+    dispatch(updateBookmark(clone));
   };
 
   useEffect(() => {
@@ -72,21 +82,20 @@ const Bookmarks = () => {
             <div className="post-item-content-inner">
               <div className="post-content title">{bookmark.title}</div>
               <div className="post-title actions bookmark-actions">
-                <span className="fa-layers fa-fw">
-                  <FontAwesomeIcon
-                    icon={faCircle}
-                    className="bookmark-bg"
-                    size="lg"
-                  />
-                  <FontAwesomeIcon
-                    icon={faCircleRing}
-                    className="bookmark-border"
-                    size="lg"
-                  />
-                  <FontAwesomeIcon icon={faBookmark} transform="shrink-6" />
-                </span>
+                <button data-bookmark={bookmark.id as string} className="toggle-important-btn" onClick={toggleImportant}>
+                  <span className="fa-layers fa-fw">
+                    <FontAwesomeIcon
+                      icon={faCircle}
+                      className="bookmark-bg"
+                      size="lg"
+                    />
+                    <FontAwesomeIcon icon={faCircleRing} className="bookmark-border" size="lg"/>
+                    <FontAwesomeIcon icon={faBookmark} transform="shrink-6" />
+                  </span>
+                  {bookmark?.important ? <FontAwesomeIcon className="important" icon={faCheckCircle} transform="lg"/> : ''}
+                </button>
                 <Button
-                  id={bookmark.id as string}
+                  data-bookmark={bookmark.id as string}
                   type={ButtonType.ICON_ONLY}
                   options={btnOptions}
                   icon={faTimes}

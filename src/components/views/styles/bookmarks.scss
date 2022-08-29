@@ -32,6 +32,23 @@
       color: $color-light-coral-opacity;
     }
   }
+  & .toggle-important-btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    position: relative;
+
+    & .important {
+      position: absolute;
+      top: -.5rem;
+      right: .15rem;
+      color: $highlight-yellow;
+      font-size: 1.5rem;
+      box-shadow: .2rem -.2rem $color-light-coral-opacity;
+      border-radius: 50%;    
+      filter: drop-shadow(0 0 1rem $color-light-coral-opacity);
+    }
+  }
 }
 
 h3.post-list-header {

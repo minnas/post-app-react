@@ -7,7 +7,8 @@ export type Post = Item & {
   body?: string;
 };
 export type Bookmark = Post & {
-  postId?: string;
+  postId: string;
+  important?: boolean;
 };
 export type Todo = Post & {
   completed: boolean;
