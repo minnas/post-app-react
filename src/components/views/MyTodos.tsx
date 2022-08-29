@@ -70,6 +70,13 @@ const MyTodos = () => {
     fillBgColorMode: true,
   } as TooltipOptions;
 
+  const todoToggleIcon = (completed: boolean) => {
+    if(completed) {
+      return faBugSlash;
+    }
+    return faBug;
+  }
+
   const tooltip = "Add todo also from last page";
   return (
     <>
@@ -105,23 +112,13 @@ const MyTodos = () => {
               <div className="todo-title">{todo.title}</div>
             </div>
             <div className="todo-title completed">
-              {todo.completed ? (
-                <Button
-                  id={todo.id as string}
-                  type={ButtonType.ICON_ONLY}
-                  options={btnOptions}
-                  icon={faBugSlash}
-                  onClick={setToggleTodoStatus}
-                />
-              ) : (
-                <Button
-                  id={todo.id as string}
-                  type={ButtonType.ICON_ONLY}
-                  options={btnOptions}
-                  icon={faBug}
-                  onClick={setToggleTodoStatus}
-                />
-              )}
+              <Button
+                id={todo.id as string}
+                type={ButtonType.ICON_ONLY}
+                options={btnOptions}
+                icon={todoToggleIcon(todo.completed)}
+                onClick={setToggleTodoStatus}
+              />
               <Button
                 id={todo.id as string}
                 type={ButtonType.ICON_ONLY}
