@@ -33,7 +33,7 @@ const Bookmarks = () => {
 
   const removeFromBookmarks: MouseEventHandler = (event) => {
     const btn = event.currentTarget as HTMLButtonElement;
-    const id = btn.getAttribute("data-bookmark");
+    const id = btn.id;
     dispatch(removeBookmark({ id }));
   };
 
@@ -95,7 +95,7 @@ const Bookmarks = () => {
                   {bookmark?.important ? <FontAwesomeIcon className="important" icon={faCheckCircle} transform="lg"/> : ''}
                 </button>
                 <Button
-                  data-bookmark={bookmark.id as string}
+                  id={bookmark.id as string}
                   type={ButtonType.ICON_ONLY}
                   options={btnOptions}
                   icon={faTimes}
