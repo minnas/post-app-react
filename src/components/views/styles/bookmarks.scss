@@ -40,12 +40,12 @@
 
     & .important {
       position: absolute;
-      top: -.5rem;
-      right: .15rem;
+      top: -0.5rem;
+      right: 0.15rem;
       color: $highlight-yellow;
       font-size: 1.5rem;
-      box-shadow: .2rem -.2rem $color-light-coral-opacity;
-      border-radius: 50%;    
+      box-shadow: 0.2rem -0.2rem $color-light-coral-opacity;
+      border-radius: 50%;
       filter: drop-shadow(0 0 1rem $color-light-coral-opacity);
     }
   }

@@ -5,7 +5,7 @@ import {
   faHome,
   faTimes,
   faCircle,
-  faCheckCircle
+  faCheckCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { faCircle as faCircleRing } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -40,8 +40,8 @@ const Bookmarks = () => {
   const toggleImportant: MouseEventHandler = (event) => {
     const btn = event.currentTarget as HTMLButtonElement;
     const id = btn.getAttribute("data-bookmark");
-    const bookmark = bookmarks.find(b => b.id as string == id);
-    const clone = {...bookmark};
+    const bookmark = bookmarks.find((b) => (b.id as string) == id);
+    const clone = { ...bookmark };
     clone.important = bookmark?.important ? false : true;
     dispatch(updateBookmark(clone));
   };
@@ -82,17 +82,33 @@ const Bookmarks = () => {
             <div className="post-item-content-inner">
               <div className="post-content title">{bookmark.title}</div>
               <div className="post-title actions bookmark-actions">
-                <button data-bookmark={bookmark.id as string} className="toggle-important-btn" onClick={toggleImportant}>
+                <button
+                  data-bookmark={bookmark.id as string}
+                  className="toggle-important-btn"
+                  onClick={toggleImportant}
+                >
                   <span className="fa-layers fa-fw">
                     <FontAwesomeIcon
                       icon={faCircle}
                       className="bookmark-bg"
                       size="lg"
                     />
-                    <FontAwesomeIcon icon={faCircleRing} className="bookmark-border" size="lg"/>
+                    <FontAwesomeIcon
+                      icon={faCircleRing}
+                      className="bookmark-border"
+                      size="lg"
+                    />
                     <FontAwesomeIcon icon={faBookmark} transform="shrink-6" />
                   </span>
-                  {bookmark?.important ? <FontAwesomeIcon className="important" icon={faCheckCircle} transform="lg"/> : ''}
+                  {bookmark?.important ? (
+                    <FontAwesomeIcon
+                      className="important"
+                      icon={faCheckCircle}
+                      transform="lg"
+                    />
+                  ) : (
+                    ""
+                  )}
                 </button>
                 <Button
                   id={bookmark.id as string}

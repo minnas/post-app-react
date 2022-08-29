@@ -14,7 +14,7 @@ import {
   faCloudSun,
   faSnowflake,
   faSnowman,
-  faMosquito
+  faMosquito,
 } from "@fortawesome/free-solid-svg-icons";
 import Posts from "./components/views/Posts";
 import Bookmarks from "./components/views/Bookmarks";
