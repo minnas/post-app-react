@@ -8,7 +8,13 @@ import {
   faBugSlash,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FormEvent, MouseEventHandler, useEffect, useState } from "react";
+import {
+  FormEvent,
+  MouseEventHandler,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { add, update, remove, RootState } from "./../../store/store";
 import { NavLink } from "react-router-dom";
@@ -29,6 +35,13 @@ const MyTodos = () => {
   const todos = useSelector((state: RootState) => state.todos);
   const dispatch = useDispatch();
   const [count, setCount] = useState(0);
+  const aNewDummyTodo = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (null != aNewDummyTodo.current) {
+      aNewDummyTodo.current.placeholder = "A new Dummy Todo";
+    }
+  }, [null !== aNewDummyTodo.current]);
 
   const toggleTodo = (id: number) => {
     const todo = todos.find((t: MyTodo) => t.id == id) as MyTodo;
@@ -71,11 +84,11 @@ const MyTodos = () => {
   } as TooltipOptions;
 
   const todoToggleIcon = (completed: boolean) => {
-    if(completed) {
+    if (completed) {
       return faBugSlash;
     }
     return faBug;
-  }
+  };
 
   const tooltip = "Add todo also from last page";
   return (
@@ -96,7 +109,7 @@ const MyTodos = () => {
           <label htmlFor="todoTitle">
             Add new Todo and save it by pressing Enter
           </label>
-          <input name="todoTitle" type="text" />
+          <input name="todoTitle" type="text" ref={aNewDummyTodo} />
         </form>
       </div>
       <div className="awesome-todo-list">
