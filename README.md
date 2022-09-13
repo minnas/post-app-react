@@ -1,6 +1,6 @@
-# Post App created with React 18 + TypeScript + Vite
+# Post/Todo App created with React 18 + TypeScript + Vite
 
-This is a simple posts-app which will use free dummy api
+This is a simple posts-app which uses free dummy api.
 
 Caution:
 Still under construction 👷‍♀️⛏.
