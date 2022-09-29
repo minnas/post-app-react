@@ -1,5 +1,5 @@
 import { createSlice, configureStore } from "@reduxjs/toolkit";
-import { pages } from "../components/types/pages";
+import uuid from "react-uuid";
 import { Bookmark, MyTodo } from "../components/types/types";
 
 const myTodoSlice = createSlice({
@@ -7,10 +7,10 @@ const myTodoSlice = createSlice({
   initialState: [] as MyTodo[],
   reducers: {
     add: (state, action) => {
-      state.push(action.payload as MyTodo);
+      state.push({ ...action.payload, id: uuid() } as MyTodo);
     },
     remove: (state, action) => {
-      return state.filter((t) => t.id != (action.payload.id as number));
+      return state.filter((t) => t.id != action.payload.id);
     },
     update: (state, action) => {
       const index = state.findIndex(
@@ -28,10 +28,10 @@ const myBookmarkSlice = createSlice({
   initialState: [] as Bookmark[],
   reducers: {
     addBookmark: (state, action) => {
-      state.push(action.payload as Bookmark);
+      state.push({ ...action.payload, id: uuid() } as Bookmark);
     },
     removeBookmark: (state, action) => {
-      return state.filter((t) => t.id != (action.payload.id as number));
+      return state.filter((t) => t.id != action.payload.id);
     },
     updateBookmark: (state, action) => {
       const index = state.findIndex(

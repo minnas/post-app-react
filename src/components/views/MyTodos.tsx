@@ -43,7 +43,7 @@ const MyTodos = () => {
     }
   }, [null !== aNewDummyTodo.current]);
 
-  const toggleTodo = (id: number) => {
+  const toggleTodo = (id: string) => {
     const todo = todos.find((t: MyTodo) => t.id == id) as MyTodo;
     const clone = { ...todo };
     clone.completed = !todo.completed;
@@ -52,7 +52,7 @@ const MyTodos = () => {
 
   const setToggleTodoStatus: MouseEventHandler = (event) => {
     const btn = event.currentTarget as HTMLButtonElement;
-    toggleTodo(Number.parseInt(btn.id));
+    toggleTodo(btn.id);
     return false;
   };
 

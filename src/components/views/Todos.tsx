@@ -64,7 +64,6 @@ const Todos = () => {
       dispatch(
         add({
           externalId: id,
-          id: myTodos.length,
           title: todo.title,
         } as MyTodo)
       );

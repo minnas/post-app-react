@@ -61,7 +61,6 @@ const Posts = () => {
       dispatch(
         addBookmark({
           postId: id,
-          id: bookmarks.length,
           title: post.title,
           body: post.body,
         } as Bookmark)
