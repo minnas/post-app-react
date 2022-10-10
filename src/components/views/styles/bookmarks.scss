@@ -48,6 +48,10 @@
       border-radius: 50%;
       filter: drop-shadow(0 0 1rem $color-light-coral-opacity);
     }
+    & .bookmark-border,
+    & .fa-bookmark {
+      color: $color-black;
+    }
   }
 }
 

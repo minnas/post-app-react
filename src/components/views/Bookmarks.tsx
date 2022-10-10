@@ -11,7 +11,7 @@ import { faCircle as faCircleRing } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MouseEventHandler, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { removeBookmark, updateBookmark, RootState } from "./../../store/store";
+import { RootState } from "./../../store/store";
 import { NavLink } from "react-router-dom";
 import Button from "../tools/Button";
 import {
@@ -25,6 +25,7 @@ import "./styles/home.scss";
 import "./styles/posts.scss";
 import "./styles/bookmarks.scss";
 import Tooltip from "../tools/Tooltip";
+import { removeBookmark, updateBookmark } from "../../store/dataSlices";
 
 const Bookmarks = () => {
   const bookmarks = useSelector((state: RootState) => state.bookmarks);

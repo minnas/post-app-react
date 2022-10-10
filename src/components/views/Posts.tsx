@@ -9,7 +9,7 @@ import { MouseEventHandler, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { search } from "../../api/api";
 import Spinner from "../tools/Spinner";
-import { addBookmark, RootState } from "./../../store/store";
+import { RootState } from "./../../store/store";
 import { Post, Bookmark } from "../types/types";
 import Button from "../tools/Button";
 import {
@@ -23,6 +23,7 @@ import "./styles/home.scss";
 import "./styles/posts.scss";
 import { useDispatch, useSelector } from "react-redux";
 import Tooltip from "../tools/Tooltip";
+import { addBookmark } from "../../store/dataSlices";
 
 const Posts = () => {
   const [posts, setPosts] = useState([] as Post[]);

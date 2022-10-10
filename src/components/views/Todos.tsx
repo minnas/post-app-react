@@ -12,7 +12,7 @@ import { MouseEventHandler, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { ApiType, search } from "../../api/api";
 import Spinner from "../tools/Spinner";
-import { add, RootState } from "./../../store/store";
+import { RootState } from "./../../store/store";
 import { MyTodo, Todo } from "../types/types";
 import Button from "../tools/Button";
 import {
@@ -26,6 +26,7 @@ import "./styles/home.scss";
 import "./styles/todos.scss";
 import { useDispatch, useSelector } from "react-redux";
 import Tooltip from "../tools/Tooltip";
+import { add } from "../../store/dataSlices";
 
 const Todos = () => {
   const [todos, setTodos] = useState([] as Todo[]);

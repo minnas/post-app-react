@@ -16,7 +16,7 @@ import {
   useState,
 } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { add, update, remove, RootState } from "./../../store/store";
+import { RootState } from "./../../store/store";
 import { NavLink } from "react-router-dom";
 import Button from "../tools/Button";
 import {
@@ -30,6 +30,7 @@ import "./styles/home.scss";
 import "./styles/todos.scss";
 import "./styles/mytodos.scss";
 import Tooltip from "../tools/Tooltip";
+import { add, remove, update } from "../../store/dataSlices";
 
 const MyTodos = () => {
   const todos = useSelector((state: RootState) => state.todos);
@@ -64,6 +65,7 @@ const MyTodos = () => {
     const id = todos.length;
     dispatch(add({ title, id } as MyTodo));
   };
+
   const removeTodo: MouseEventHandler = (event) => {
     const btn = event.currentTarget as HTMLButtonElement;
     const id = btn.id;

@@ -13,13 +13,14 @@ import { NavLink } from "react-router-dom";
 import Button from "../tools/Button";
 import Tooltip from "../tools/Tooltip";
 import { ButtonOptions, ButtonType, TooltipType } from "../tools/settings";
-import { increment, decrement, reset, RootState } from "../../store/store";
+import { RootState } from "../../store/store";
 import { useDispatch, useSelector } from "react-redux";
 import Accordion from "../tools/Accordion";
 import img from "./../../assets/birds.png";
 
 import "./styles/home.scss";
 import "./styles/tools.scss";
+import { decrement, increment, reset } from "../../store/dataSlices";
 
 const Tools = () => {
   const count = useSelector((state: RootState) => state.count);

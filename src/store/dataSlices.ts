@@ -1,4 +1,4 @@
-import { createSlice, configureStore } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import uuid from "react-uuid";
 import { Bookmark, MyTodo } from "../components/types/types";
 
@@ -53,18 +53,12 @@ const counterSlice = createSlice({
     reset: (state) => (state = 0),
   },
 });
-
+/**reducers */
+export const myTodoReducer = myTodoSlice.reducer;
+export const bookmarkReducer = myBookmarkSlice.reducer;
+export const counterReducer = counterSlice.reducer;
+/**actions */
 export const { add, update, remove } = myTodoSlice.actions;
 export const { addBookmark, updateBookmark, removeBookmark } =
   myBookmarkSlice.actions;
 export const { increment, decrement, reset } = counterSlice.actions;
-
-const store = configureStore({
-  reducer: {
-    todos: myTodoSlice.reducer,
-    bookmarks: myBookmarkSlice.reducer,
-    count: counterSlice.reducer,
-  },
-});
-export type RootState = ReturnType<typeof store.getState>;
-export default store;
