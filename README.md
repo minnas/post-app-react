@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/code-ReactJS-informational?style=flat&logo=react&logoColor=white&color=5ed3f3)&nbsp; ![](https://img.shields.io/badge/code-Typescript-informational?style=flat&logo=typescript&logoColor=white&color=0076c6)
+![](https://img.shields.io/badge/code-ReactJS-informational?style=flat&logo=react&logoColor=white&color=5ed3f3)&nbsp; ![](https://img.shields.io/badge/code-Typescript-informational?style=flat&logo=typescript&logoColor=white&color=0076c6)&nbsp;![](https://img.shields.io/badge/tool-Vite-informational?style=flat&logo=vite&logoColor=white&color=646cff)
 
 # Post/Todo App created with React 18 + TypeScript + Vite
 
