@@ -10,23 +10,23 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MouseEventHandler, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { ApiType, search } from "../../api/api";
-import Spinner from "../tools/Spinner";
-import { RootState } from "./../../store/store";
-import { MyTodo, Todo } from "../types/types";
-import Button from "../tools/Button";
+import { ApiType, search } from "@api/api";
+import Spinner from "@tools/Spinner";
+import { RootState } from "@store/store";
+import { MyTodo, Todo } from "@dataTypes/types";
+import Button from "@tools/Button";
 import {
   ButtonOptions,
   ButtonType,
   TooltipType,
   ToastType,
-} from "../tools/settings";
-import Toast from "../tools/Toast";
+} from "@tools/settings";
+import Toast from "@tools/Toast";
 import "./styles/home.scss";
 import "./styles/todos.scss";
 import { useDispatch, useSelector } from "react-redux";
-import Tooltip from "../tools/Tooltip";
-import { add } from "../../store/dataSlices";
+import Tooltip from "@tools/Tooltip";
+import { add } from "@store/dataSlices";
 
 const Todos = () => {
   const [todos, setTodos] = useState([] as Todo[]);

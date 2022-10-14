@@ -10,9 +10,11 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MouseEventHandler } from "react";
 import { NavLink } from "react-router-dom";
-import Button from "../tools/Button";
-import Tooltip from "../tools/Tooltip";
-import { ButtonDefaults, ButtonType, TooltipType } from "../tools/settings";
+import store from "@store/store";
+
+import Button from "@tools/Button";
+import Tooltip from "@tools/Tooltip";
+import { ButtonDefaults, ButtonType, TooltipType } from "@tools/settings";
 import "./styles/home.scss";
 
 const Home = () => {

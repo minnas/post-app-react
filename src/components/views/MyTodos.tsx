@@ -16,21 +16,21 @@ import {
   useState,
 } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "./../../store/store";
+import { RootState } from "./@store/store";
 import { NavLink } from "react-router-dom";
-import Button from "../tools/Button";
+import Button from "@tools/Button";
 import {
   ButtonType,
   ButtonOptions,
   TooltipType,
   TooltipOptions,
-} from "../tools/settings";
-import { MyTodo } from "../types/types";
+} from "@tools/settings";
+import { MyTodo } from "@dataTypes/types";
 import "./styles/home.scss";
 import "./styles/todos.scss";
 import "./styles/mytodos.scss";
-import Tooltip from "../tools/Tooltip";
-import { add, remove, update } from "../../store/dataSlices";
+import Tooltip from "@tools/Tooltip";
+import { add, remove, update } from "@store/dataSlices";
 
 const MyTodos = () => {
   const todos = useSelector((state: RootState) => state.todos);

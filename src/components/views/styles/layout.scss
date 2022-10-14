@@ -1,11 +1,11 @@
-@import "./../../styles/variables";
+@import "@styles/variables";
 
 .content {
   display: flex;
   justify-content: center;
   width: 100%;
   align-content: flex-start;
-  background-image: url("./../../../assets/placeholder.png");
+  background-image: url("@assets/placeholder.png");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;

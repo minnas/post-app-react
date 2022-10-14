@@ -7,23 +7,23 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MouseEventHandler, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { search } from "../../api/api";
-import Spinner from "../tools/Spinner";
-import { RootState } from "./../../store/store";
-import { Post, Bookmark } from "../types/types";
-import Button from "../tools/Button";
+import { search } from "@api/api";
+import Spinner from "@tools/Spinner";
+import { RootState } from "@store/store";
+import { Post, Bookmark } from "@dataTypes/types";
+import Button from "@tools/Button";
 import {
   ButtonOptions,
   ButtonType,
   TooltipType,
   ToastType,
-} from "../tools/settings";
-import Toast from "../tools/Toast";
+} from "@tools/settings";
+import Toast from "@tools/Toast";
 import "./styles/home.scss";
 import "./styles/posts.scss";
 import { useDispatch, useSelector } from "react-redux";
-import Tooltip from "../tools/Tooltip";
-import { addBookmark } from "../../store/dataSlices";
+import Tooltip from "@tools/Tooltip";
+import { addBookmark } from "@store/dataSlices";
 
 const Posts = () => {
   const [posts, setPosts] = useState([] as Post[]);

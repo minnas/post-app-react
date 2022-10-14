@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./components/views/Home";
-import Todos from "./components/views/Todos";
+import Home from "@views/Home";
+import Todos from "@views/Todos";
 import "./custom.scss";
-import MyTodos from "./components/views/MyTodos";
-import store from "./store/store";
+import MyTodos from "@views/MyTodos";
+import store from "@store/store";
 import { Provider } from "react-redux";
-import Tools from "./components/views/Tools";
-import Layout from "./components/views/Layout";
+import Tools from "@views/Tools";
+import Layout from "@views/Layout";
 import "./app.scss";
 import {
   faBugs,
@@ -16,8 +16,8 @@ import {
   faSnowman,
   faMosquito,
 } from "@fortawesome/free-solid-svg-icons";
-import Posts from "./components/views/Posts";
-import Bookmarks from "./components/views/Bookmarks";
+import Posts from "@views/Posts";
+import Bookmarks from "@views/Bookmarks";
 
 const App = (): JSX.Element => {
   return (

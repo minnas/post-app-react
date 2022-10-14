@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import uuid from "react-uuid";
-import { Bookmark, MyTodo } from "../components/types/types";
+import { Bookmark, MyTodo } from "@dataTypes/types";
 
 const myTodoSlice = createSlice({
   name: "myTodos",
