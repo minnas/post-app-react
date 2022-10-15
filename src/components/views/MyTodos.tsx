@@ -16,7 +16,7 @@ import {
   useState,
 } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "./@store/store";
+import { RootState } from "@store/store";
 import { NavLink } from "react-router-dom";
 import Button from "@tools/Button";
 import {
