@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "@views/Home";
 import Todos from "@views/Todos";
-import "./custom.scss";
+import "@baseStyles/custom.scss";
 import MyTodos from "@views/MyTodos";
 import store from "@store/store";
 import { Provider } from "react-redux";
 import Tools from "@views/Tools";
 import Layout from "@views/Layout";
-import "./app.scss";
+import "@baseStyles/app.scss";
 import {
   faBugs,
   faCloudMoonRain,

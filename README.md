@@ -13,4 +13,8 @@ To Setup:
 First ensure you are using node version > 14 (and have yarn installed)
 
 1. Run yarn
-2. Run yarn dev and browse to http://localhost:5173/
+2. Run yarn dev and browse to http://localhost:3000/
+
+Or in Docker:
+
+1. Run docker compose up and browse to http://localhost:3000/

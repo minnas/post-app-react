@@ -24,7 +24,9 @@
       "@tools/*": ["./src/components/tools/*"],
       "@dataTypes/*": ["./src/components/types/*"],
       "@api/*": ["./src/api/*"],
-      "@assets/*": ["./src/assets/*"]
+      "@assets/*": ["./src/assets/*"],
+      "@baseStyles/*": ["./src/styles/*"],
+      "@App": ["./src/App.tsx"]
     }
   },
   "include": ["src"],

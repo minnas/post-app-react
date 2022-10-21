@@ -14,6 +14,8 @@ export default defineConfig({
       "@dataTypes": path.resolve(__dirname, "./src/components/types"),
       "@api": path.resolve(__dirname, "./src/api"),
       "@assets": path.resolve(__dirname, "./src/assets"),
+      "@baseStyles": path.resolve(__dirname, "./src/styles"),
+      "@App": path.resolve(__dirname, "./src/App.tsx"),
     },
   },
 });
