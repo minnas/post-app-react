@@ -3,9 +3,6 @@ FROM node:18
 
 RUN npm install vite@3.0.0 -g
 
-
-#ENV NODE_ENV=production
-
 WORKDIR /app
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
@@ -16,6 +13,4 @@ ENTRYPOINT ["/entrypoint.sh"]
 
 RUN yarn build
 
-#RUN yarn build
 CMD ["yarn", "dev"]
-#CMD ["npm", "start"]
